@@ -1,0 +1,83 @@
+---
+layout: base.njk
+page_type: home
+title: false
+description: Materiały warsztatu Prototypowanie wspomagane przez AI. Osiem modułów z teorią i zadaniami praktycznymi.
+permalink: index.html
+---
+{% set modules = collections.modules | sortByNumber %}
+<section class="hero-section" id="wprowadzenie" aria-labelledby="hero-title" data-course-section data-section-index="0">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Warsztat · {{ site.duration }}</p>
+      <h1 id="hero-title">Prototypowanie<br>wspomagane przez <span>AI</span></h1>
+      <p class="hero-lead">{{ site.lead }}</p>
+      <p class="hero-description">{{ site.description }}</p>
+      <a class="button button-primary hero-cta" href="#modul-1">Przejdź do modułu 1 <span aria-hidden="true">↗</span></a>
+    </div>
+
+    <aside class="hero-aside" aria-label="Jak korzystać ze strony">
+      <div class="hero-aside-top">
+        <span class="hero-aside-number" aria-hidden="true">01<span>/08</span></span>
+        <span class="hero-aside-line" aria-hidden="true"></span>
+        <span class="hero-aside-label">Startujemy od pytania</span>
+      </div>
+      <div class="hero-aside-content">
+        <p class="small-label">Jak korzystać ze strony</p>
+        <p>Na stronie głównej znajdziesz moduły wraz z pełnymi instrukcjami ćwiczeń. Otwórz materiały, gdy chcesz pogłębić teorię.</p>
+        <p class="hero-aside-note">Ćwiczenia wykonujesz w swoim narzędziu do prototypowania lub we własnych notatkach.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+{% for item in modules %}
+  <section class="module-section{% if item.data.number % 2 == 0 %} module-section-alternate{% endif %}" id="{{ item.data.slug }}" aria-labelledby="module-title-{{ item.data.number }}" data-course-section data-section-index="{{ item.data.number }}">
+    <div class="container module-content">
+      <div class="module-heading-row">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Moduł {{ item.data.number | pad2 }} / 08</p>
+          <h2 id="module-title-{{ item.data.number }}">{{ item.data.title }}</h2>
+          <p class="module-intro">{{ item.data.goal }}</p>
+        </div>
+        {% include "timer.njk" %}
+      </div>
+
+      <div class="module-grid">
+        <article class="content-card theory-card">
+          <p class="card-kicker"><span class="card-kicker-number">01</span> Wprowadzenie do tematu</p>
+          <h3>Kluczowa myśl</h3>
+          <p>{{ item.data.theory | markdownInline | safe }}</p>
+          <div class="card-keyline"><span class="keyline-mark" aria-hidden="true">↳</span> {{ item.data.principle | markdownInline | safe }}</div>
+        </article>
+
+        <article class="content-card task-card">
+          <p class="card-kicker"><span class="card-kicker-number">02</span> Zadanie praktyczne</p>
+          <h3>{{ item.data.task_title }}</h3>
+          {% if item.data.starting_point %}<p class="task-starting-point"><strong>Punkt wyjścia:</strong> {{ item.data.starting_point | markdownInline | safe }}</p>{% endif %}
+          <ol class="task-list">
+            {% for step in item.data.steps %}<li>{{ step | markdownInline | safe }}</li>{% endfor %}
+          </ol>
+          {% if item.data.self_check %}
+            <div class="task-self-check">
+              <span class="small-label">Sprawdź dla siebie</span>
+              <ul>{% for question in item.data.self_check %}<li>{{ question }}</li>{% endfor %}</ul>
+            </div>
+          {% endif %}
+        </article>
+      </div>
+
+      <div class="module-footer">
+        <div class="module-outcome">
+          <span class="small-label">Rezultat</span>
+          <p>{{ item.data.result | markdownInline | safe }}</p>
+        </div>
+        <div class="module-principle">
+          <span class="small-label">Dobra praktyka</span>
+          <p>{{ item.data.principle | markdownInline | safe }}</p>
+        </div>
+        <a class="button button-dark module-more" href="/materials/{{ item.data.slug }}/" data-course-link>Pogłęb teorię <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+{% endfor %}

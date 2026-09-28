@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Materiały warsztatu Prototypowanie wspomagane przez AI. Wprowadzenie i moduł 1: myślenie przez tworzenie.">
+    <title>Prototypowanie wspomagane przez AI — warsztat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <script src="./assets/site.js" defer></script>
+  </head>
+  <body data-page="home">
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+
+    <header class="site-header">
+      <div class="header-inner container">
+        <a class="brand" href="./#wprowadzenie" data-course-link aria-label="Prototypowanie wspomagane przez AI — wprowadzenie">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span class="brand-name">Prototypowanie<br><strong>z AI</strong></span>
+        </a>
+
+        <nav class="desktop-navigation" aria-label="Nawigacja po kursie">
+          <a class="navigation-intro is-current" href="./#wprowadzenie" data-course-link data-nav-intro aria-current="location">Wprowadzenie</a>
+          <div class="module-navigation" aria-label="Moduły">
+            <a class="module-navigation-link" href="./#modul-1" data-course-link data-nav-module aria-label="Moduł 1. Myślenie przez tworzenie w pracy z AI" title="Moduł 1. Myślenie przez tworzenie w pracy z AI">01</a>
+            <span class="module-navigation-pending" aria-label="Moduł 2. Rodzaje i wierność prototypów, w przygotowaniu" title="Moduł 2. Rodzaje i wierność prototypów — w przygotowaniu">02</span>
+            <span class="module-navigation-pending" aria-label="Moduł 3. Przygotowanie kontekstu, w przygotowaniu" title="Moduł 3. Przygotowanie kontekstu — w przygotowaniu">03</span>
+            <span class="module-navigation-pending" aria-label="Moduł 4. Interakcje poza statycznym ekranem, w przygotowaniu" title="Moduł 4. Interakcje poza statycznym ekranem — w przygotowaniu">04</span>
+            <span class="module-navigation-pending" aria-label="Moduł 5. Struktura prototypu i zakres zmiany, w przygotowaniu" title="Moduł 5. Struktura prototypu i zakres zmiany — w przygotowaniu">05</span>
+            <span class="module-navigation-pending" aria-label="Moduł 6. Debugowanie i ukierunkowana poprawka, w przygotowaniu" title="Moduł 6. Debugowanie i ukierunkowana poprawka — w przygotowaniu">06</span>
+            <span class="module-navigation-pending" aria-label="Moduł 7. Skill prototypowania z AI a zasady, w przygotowaniu" title="Moduł 7. Skill prototypowania z AI a zasady — w przygotowaniu">07</span>
+            <span class="module-navigation-pending" aria-label="Moduł 8. Synteza: roboczy Skill i lista zasad, w przygotowaniu" title="Moduł 8. Synteza: roboczy Skill i lista zasad — w przygotowaniu">08</span>
+          </div>
+        </nav>
+
+        <div class="header-actions">
+          <span class="presenter-badge" data-presenter-only hidden>Tryb prowadzącego</span>
+          <span class="step-link step-link-disabled" data-intro-only aria-disabled="true">Poprzedni</span>
+          <a class="step-link" href="./#wprowadzenie" data-course-link data-module-only hidden><span aria-hidden="true">←</span> Poprzedni</a>
+          <a class="step-link" href="./#modul-1" data-course-link data-intro-only>Następny <span aria-hidden="true">→</span></a>
+          <span class="step-link step-link-disabled" data-module-only aria-disabled="true" hidden>Następny</span>
+        </div>
+
+        <button class="menu-toggle" type="button" data-menu-toggle aria-controls="mobile-navigation" aria-expanded="false" aria-label="Otwórz nawigację">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <nav class="mobile-navigation" id="mobile-navigation" aria-label="Nawigacja po kursie" hidden>
+        <div class="mobile-navigation-inner container">
+          <a class="mobile-intro-link" href="./#wprowadzenie" data-course-link>Wprowadzenie</a>
+          <p class="mobile-navigation-label">Moduły</p>
+          <ol class="mobile-module-list">
+            <li><a href="./#modul-1" data-course-link><span>01</span> Myślenie przez tworzenie w pracy z AI</a></li>
+            <li><span class="mobile-pending"><span>02</span> Rodzaje i wierność prototypów <small>W przygotowaniu</small></span></li>
+            <li><span class="mobile-pending"><span>03</span> Przygotowanie kontekstu <small>W przygotowaniu</small></span></li>
+            <li><span class="mobile-pending"><span>04</span> Interakcje poza statycznym ekranem <small>W przygotowaniu</small></span></li>
+            <li><span class="mobile-pending"><span>05</span> Struktura prototypu i zakres zmiany <small>W przygotowaniu</small></span></li>
+            <li><span class="mobile-pending"><span>06</span> Debugowanie i ukierunkowana poprawka <small>W przygotowaniu</small></span></li>
+            <li><span class="mobile-pending"><span>07</span> Skill prototypowania z AI a zasady <small>W przygotowaniu</small></span></li>
+            <li><span class="mobile-pending"><span>08</span> Synteza: roboczy Skill i lista zasad <small>W przygotowaniu</small></span></li>
+          </ol>
+          <div class="mobile-step-links">
+            <span class="step-link step-link-disabled" data-intro-only aria-disabled="true">Poprzedni</span>
+            <a class="step-link" href="./#wprowadzenie" data-course-link data-module-only hidden><span aria-hidden="true">←</span> Poprzedni</a>
+            <a class="step-link" href="./#modul-1" data-course-link data-intro-only>Następny <span aria-hidden="true">→</span></a>
+            <span class="step-link step-link-disabled" data-module-only aria-disabled="true" hidden>Następny</span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero-section" id="wprowadzenie" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Warsztat · 4,5 godziny</p>
+            <h1 id="hero-title">Prototypowanie<br>wspomagane przez <span>AI</span></h1>
+            <p class="hero-lead">Od pytania do prototypu, który pomaga podjąć kolejną decyzję.</p>
+            <p class="hero-description">Podczas warsztatu zbudujesz i będziesz rozwijać własną aplikację związaną z wybranym przez siebie gatunkiem muzycznym. AI pomoże szybko zobaczyć pomysł w działaniu, a Ty zdecydujesz, co sprawdzić i zmienić.</p>
+            <a class="button button-primary hero-cta" href="./#modul-1" data-course-link>Przejdź do modułu 1 <span aria-hidden="true">↗</span></a>
+          </div>
+
+          <aside class="hero-aside" aria-label="Jak korzystać ze strony">
+            <div class="hero-aside-top">
+              <span class="hero-aside-number" aria-hidden="true">01<span>/08</span></span>
+              <span class="hero-aside-line" aria-hidden="true"></span>
+              <span class="hero-aside-label">Startujemy od pytania</span>
+            </div>
+            <div class="hero-aside-content">
+              <p class="small-label">Jak korzystać ze strony</p>
+              <p>Na stronie głównej znajdziesz skrót modułu. Otwórz jego rozwinięcie, gdy chcesz wrócić do teorii lub kroków zadania.</p>
+              <p class="hero-aside-note">Ćwiczenia wykonujesz w swoim narzędziu do prototypowania lub we własnych notatkach.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="module-section" id="modul-1" aria-labelledby="module-title">
+        <div class="container module-content">
+          <div class="module-heading-row">
+            <div>
+              <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Moduł 01 / 08</p>
+              <h2 id="module-title">Myślenie przez tworzenie<br>w pracy z AI</h2>
+              <p class="module-intro">Zobacz, czego możesz dowiedzieć się o własnym pomyśle, gdy nadasz mu pierwszą widoczną formę.</p>
+            </div>
+            <div class="module-time-box" aria-label="Czas modułu: 25 minut">
+              <div data-participant-time>
+                <span class="small-label">Czas modułu</span>
+                <strong>25 <span>minut</span></strong>
+              </div>
+              <div class="timer" data-timer data-presenter-only hidden>
+                <span class="small-label">Pozostały czas</span>
+                <time data-timer-display datetime="PT25M" aria-live="off">25:00</time>
+                <p class="timer-status" data-timer-status role="status" aria-live="polite">Gotowy do rozpoczęcia</p>
+                <div class="timer-actions">
+                  <button class="button button-primary" type="button" data-timer-toggle>Start</button>
+                  <button class="button button-secondary" type="button" data-timer-reset>Reset</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="module-grid">
+            <article class="content-card theory-card">
+              <p class="card-kicker"><span class="card-kicker-number">01</span> Wprowadzenie do tematu</p>
+              <h3>Prototyp jest narzędziem myślenia</h3>
+              <p>Zacznij od pytania: „Co chcę zrozumieć lub zdecydować?”. Zbuduj tylko tyle, ile potrzeba, by zobaczyć własne założenia. Potem porównaj zamiar z tym, co faktycznie powstało.</p>
+              <div class="card-keyline"><span class="keyline-mark" aria-hidden="true">↳</span> Pytanie → artefakt → obserwacja → decyzja</div>
+            </article>
+
+            <article class="content-card task-card">
+              <p class="card-kicker"><span class="card-kicker-number">02</span> Zadanie praktyczne</p>
+              <h3>Pierwsza wersja własnego pomysłu</h3>
+              <ol class="task-list">
+                <li>Zapisz pytanie dotyczące aplikacji związanej z wybranym gatunkiem muzycznym.</li>
+                <li>Poproś AI o prostą pierwszą wersję swojego pomysłu.</li>
+                <li>Obejrzyj wynik i zanotuj, co łatwiej teraz ocenić.</li>
+                <li>Zachowaj wersję bazową lub zrzut ekranu.</li>
+              </ol>
+            </article>
+          </div>
+
+          <div class="module-footer">
+            <div class="module-outcome">
+              <span class="small-label">Rezultat</span>
+              <p>Pierwszy prototyp, zapisane pytanie i jedno zdanie o tym, co stało się widoczne.</p>
+            </div>
+            <div class="module-principle">
+              <span class="small-label">Dobra praktyka</span>
+              <p>Najpierw nazwij decyzję, potem wybierz, co zbudować.</p>
+            </div>
+            <a class="button button-dark module-more" href="./moduly/modul-1/" data-course-link>Czytaj więcej <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>Prototypowanie wspomagane przez AI</span>
+        <span>Materiały warsztatowe · moduł 1 z 8</span>
+      </div>
+    </footer>
+  </body>
+</html>

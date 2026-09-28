@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<!-- saved from url=(0089)https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/index.html -->
+<html lang="pl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Strona startowa Kohorty 1 — rytm kursu, roadmapa, prowadzący, setup i wsparcie.">
+  <title>Kohorta 1 — Second Brain w Allegro</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --bg: #ffffff;
+      --bg-alt: #fafaf9;
+      --surface: #f4f4f5;
+      --ink: #18181b;
+      --graphite: #3f3f46;
+      --muted: #71717a;
+      --faint: #a1a1aa;
+      --line: #e4e4e7;
+      --line-strong: #d4d4d8;
+      --accent: #ff5a00;
+      --accent-strong: #c2410c;
+      --accent-ink: #b83f00;
+      --accent-soft: #fff2eb;
+      --positive: #166534;
+      --positive-soft: #f0fdf4;
+      --font: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --content: 1180px;
+      --reading: 68ch;
+      --radius: 12px;
+      --section-space: clamp(5rem, 9vw, 9rem);
+      --page-gutter: clamp(1.25rem, 5vw, 4rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body.menu-open { overflow: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+
+    .skip-link {
+      position: fixed;
+      z-index: 200;
+      top: 0.75rem;
+      left: 0.75rem;
+      padding: 0.7rem 1rem;
+      background: var(--ink);
+      color: white;
+      text-decoration: none;
+      transform: translateY(-180%);
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    .site-header {
+      position: sticky;
+      z-index: 100;
+      top: 0;
+      border-bottom: 1px solid rgba(228, 228, 231, 0.9);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(16px);
+    }
+    .nav-shell {
+      width: min(100%, calc(var(--content) + 2 * var(--page-gutter)));
+      min-height: 4.75rem;
+      margin: 0 auto;
+      padding: 0 var(--page-gutter);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.55rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .brand-logo { width: 3.5rem; height: auto; }
+    .brand-divider { color: var(--line-strong); }
+    .brand-name { font-size: 0.92rem; font-weight: 700; }
+    .desktop-nav { display: flex; align-items: center; gap: 1.25rem; }
+    .desktop-nav a:not(.button) {
+      color: var(--graphite);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .desktop-nav a:not(.button):hover { color: var(--accent-ink); }
+    .menu-button {
+      display: none;
+      min-height: 44px;
+      border: 1px solid var(--line-strong);
+      border-radius: 8px;
+      background: white;
+      color: var(--ink);
+      padding: 0.55rem 0.9rem;
+      font-weight: 700;
+    }
+    .mobile-nav {
+      display: none;
+      border-top: 1px solid var(--line);
+      background: white;
+      padding: 0.75rem var(--page-gutter) 1.25rem;
+    }
+    .mobile-nav.open { display: grid; gap: 0.25rem; }
+    .mobile-nav a {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      color: var(--graphite);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    main { overflow: clip; }
+    section { padding: var(--section-space) var(--page-gutter); }
+    section.alt { background: var(--bg-alt); }
+    .container { width: min(100%, var(--content)); margin: 0 auto; }
+    .reading { max-width: var(--reading); }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.72fr) minmax(18rem, 0.48fr);
+      gap: clamp(2rem, 6vw, 6rem);
+      align-items: end;
+      margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+    }
+    .section-head.single { grid-template-columns: minmax(0, 1fr); }
+    .section-head.single .section-intro { max-width: 68ch; margin-top: 1.25rem; }
+    .section-head.roadmap-head, .section-head.rhythm-head { grid-template-columns: minmax(0, 1fr); }
+    .eyebrow {
+      display: block;
+      margin-bottom: 1rem;
+      color: var(--accent-ink);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .kicker-rule {
+      width: 3.5rem;
+      height: 4px;
+      margin-bottom: 1.25rem;
+      border-radius: 99px;
+      background: var(--accent);
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { letter-spacing: -0.025em; }
+    h1 {
+      max-width: 12ch;
+      margin-bottom: 1.5rem;
+      font-size: clamp(3rem, 7.3vw, 6.8rem);
+      font-weight: 800;
+      line-height: 0.98;
+    }
+    h2 {
+      max-width: none;
+      margin-bottom: 0;
+      font-size: clamp(1.8rem, 4vw, 3.6rem);
+      font-weight: 750;
+      line-height: 1.05;
+    }
+    h3 {
+      margin-bottom: 0.65rem;
+      font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+    p, li {
+      color: var(--graphite);
+      font-size: clamp(0.98rem, 1.25vw, 1.1rem);
+      line-height: 1.65;
+    }
+    .lead-points {
+      max-width: none;
+      margin: 0 0 2rem;
+      padding: 0;
+      display: grid;
+      gap: 0.25rem;
+      list-style: none;
+    }
+    .lead-points li {
+      position: relative;
+      padding-left: 1.35rem;
+      color: var(--graphite);
+      font-size: clamp(1.12rem, 1.8vw, 1.45rem);
+      line-height: 1.5;
+    }
+    .lead-points li::before {
+      content: "";
+      position: absolute;
+      top: 0.75em;
+      left: 0;
+      width: 0.5rem;
+      height: 0.5rem;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .section-intro { margin-bottom: 0; color: var(--muted); }
+    .small { font-size: 0.88rem; line-height: 1.55; }
+    .muted { color: var(--muted); }
+
+    .button-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 0.75rem 1.15rem;
+      font-size: 0.9rem;
+      font-weight: 750;
+      line-height: 1.2;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+    }
+    .button:hover { transform: translateY(-1px); }
+    .button-primary { background: var(--accent-strong); color: #ffffff; }
+    .button-primary:hover { background: #9f3410; }
+    .button-secondary { border-color: var(--line-strong); background: white; color: var(--ink); }
+    .button-secondary:hover { border-color: var(--graphite); }
+    .button-disabled { border-color: var(--line-strong); background: var(--surface); color: var(--faint); cursor: not-allowed; pointer-events: none; }
+    .button-disabled:hover { transform: none; }
+    .button-dark { background: var(--ink); color: white; }
+    .button-dark:hover { background: #2c2c31; }
+
+    .hero {
+      min-height: calc(100vh - 4.75rem);
+      display: flex;
+      align-items: center;
+      padding-top: clamp(4.5rem, 10vw, 8rem);
+      padding-bottom: clamp(4rem, 8vw, 7rem);
+    }
+    .facts {
+      margin-top: clamp(3rem, 7vw, 5.5rem);
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .fact { padding: 1.4rem 1.2rem 1.45rem 0; }
+    .fact + .fact { border-left: 1px solid var(--line); padding-left: 1.2rem; }
+    .fact strong { display: block; margin-bottom: 0.25rem; font-size: clamp(1.25rem, 2.2vw, 1.8rem); }
+    .fact span { color: var(--muted); font-size: 0.82rem; font-weight: 650; }
+
+    .rhythm-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-top: 1px solid var(--line-strong);
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .rhythm-step { min-height: 16rem; padding: 2rem 1.5rem 2rem 0; }
+    .rhythm-step + .rhythm-step { border-left: 1px solid var(--line); padding-left: 1.5rem; }
+    .step-number {
+      display: block;
+      margin-bottom: 2.5rem;
+      color: var(--accent);
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+    .rhythm-step p { margin-bottom: 0; font-size: 0.94rem; }
+    .rhythm-note {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .rhythm-note strong { color: var(--ink); }
+    .rhythm-cta { margin-top: 1.5rem; }
+
+    .facilitator-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+    .facilitator-card {
+      min-height: 21rem;
+      display: flex;
+      flex-direction: column;
+      padding-top: 1.5rem;
+    }
+    .facilitator-card .portrait {
+      width: clamp(8rem, 13vw, 10.5rem);
+      aspect-ratio: 1;
+      margin-bottom: 1.5rem;
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .facilitator-card h3 { margin-bottom: 0.25rem; }
+    .facilitator-card .title { margin-bottom: 0.65rem; color: var(--muted); font-size: 0.9rem; font-weight: 650; }
+    .facilitator-card p:last-child { margin-bottom: 0; font-size: 0.88rem; }
+    .tools-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .tool-card {
+      min-height: 19rem;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      padding: clamp(1.5rem, 3vw, 2.25rem);
+    }
+    .tool-heading { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+    .tool-icon {
+      flex: 0 0 5rem;
+      width: 5rem;
+      height: 5rem;
+      display: grid;
+      place-items: center;
+      margin-bottom: 0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .tool-icon img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
+    .tool-icon.codex { background: var(--ink); color: white; }
+    .tool-icon.obsidian { background: #f2edff; color: #6d28d9; }
+    .tool-heading h3 { margin-bottom: 0; }
+    .tool-card p { margin-bottom: 0; font-size: 0.94rem; }
+    .tool-access-note { display: block; margin-top: 0.8rem; color: var(--ink); }
+    .tool-link { display: inline-flex; align-items: center; gap: 0.45rem; margin-top: auto; padding-top: 1.5rem; color: var(--accent-ink); font-size: 0.88rem; font-weight: 750; text-decoration: none; }
+    .tool-link:hover { text-decoration: underline; }
+    .roadmap-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .roadmap-card {
+      min-height: 16rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      padding: clamp(1.35rem, 2.5vw, 1.75rem);
+    }
+    .roadmap-card--highlight { border: 2px solid var(--accent); }
+    .roadmap-card-heading { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 0.85rem; align-items: start; }
+    .roadmap-session-number { margin-top: -0.1rem; color: var(--accent-strong); font-size: 2.65rem; font-weight: 800; letter-spacing: -0.08em; line-height: 0.9; }
+    .roadmap-card .date { margin: 0 0 0.7rem; color: var(--accent-ink); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; }
+    .roadmap-footer { display: flex; flex-direction: column; align-items: stretch; gap: 1rem; margin-top: 1.5rem; }
+    .roadmap-actions { width: 100%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; gap: 0.6rem; }
+    .roadmap-actions > .button, .roadmap-recording { min-width: 0; }
+    .roadmap-actions > .button { width: 100%; }
+    .roadmap-actions .button { padding: 0.55rem 0.6rem; white-space: nowrap; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; }
+    .roadmap-recording { display: flex; flex-direction: column; align-items: stretch; gap: 0.3rem; }
+    .roadmap-card .roadmap-password { display: flex; align-items: center; flex-wrap: wrap; gap: 0.3rem; margin: 0; color: var(--muted); font-size: 0.7rem; font-weight: 700; line-height: 1.25; }
+    .roadmap-password code { border: 1px solid var(--line-strong); border-radius: 5px; background: var(--surface); padding: 0.15rem 0.35rem; color: var(--ink); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 0.95em; letter-spacing: 0.03em; }
+    .roadmap-footer .owner-line { margin-top: 0; padding-top: 1rem; border-top: 1px solid var(--line); }
+    .roadmap-recording .button { width: 100%; }
+    .roadmap-card h3 { max-width: none; margin-bottom: 0; font-size: clamp(1.05rem, 1.45vw, 1.3rem); line-height: 1.15; }
+    .roadmap-card p { margin-bottom: 0; font-size: 0.86rem; }
+    .owner-line { margin-top: 0; color: var(--ink); }
+    .owner-label { display: block; margin-bottom: 0.5rem; color: var(--muted); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+    .owner-people { display: flex; flex-wrap: wrap; gap: 0.55rem 0.75rem; }
+    .owner-person { display: inline-flex; align-items: center; gap: 0.45rem; color: var(--ink); font-size: 0.75rem; font-weight: 700; line-height: 1.2; }
+    .owner-person img { width: 2.15rem; height: 2.15rem; flex: 0 0 2.15rem; border: 1px solid var(--line-strong); border-radius: 50%; object-fit: cover; }
+
+    .live-grid, .support-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .live-card, .support-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      padding: clamp(1.5rem, 3vw, 2.25rem);
+    }
+    .live-card h3, .support-card h3 { margin-bottom: 1.25rem; }
+    .live-card p, .support-card p { margin-bottom: 0; font-size: 0.94rem; }
+    .clean-list { margin: 0; padding: 0; list-style: none; }
+    .clean-list li { position: relative; padding: 0.85rem 0 0.85rem 1.35rem; border-top: 1px solid var(--line); }
+    .clean-list li::before {
+      content: "";
+      position: absolute;
+      top: 1.55rem;
+      left: 0;
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .setup-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .setup-card {
+      min-height: 16rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      padding: 1.5rem;
+    }
+    .card-label {
+      display: inline-flex;
+      min-width: 2.25rem;
+      min-height: 2.25rem;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--accent-ink);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+    .setup-card p { margin-bottom: 0; font-size: 0.9rem; }
+    .setup-banner {
+      margin-bottom: 2rem;
+      border: 2px solid var(--accent);
+      border-radius: var(--radius);
+      background: var(--accent-soft);
+      padding: 1.5rem;
+    }
+    .setup-banner strong { display: block; margin-bottom: 0.35rem; color: var(--accent-ink); font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; }
+    .setup-banner p { margin-bottom: 0; font-size: 1rem; }
+
+    .outcome-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.85rem; }
+    .outcome-card {
+      min-height: 17rem;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      padding: 1.5rem;
+    }
+    .outcome-card p { margin-bottom: 0; font-size: 0.9rem; }
+    .outcome-card .button { width: 100%; margin-top: auto; }
+
+    .support-grid { grid-template-columns: 0.9fr 1.1fr; align-items: start; }
+    .support-grid.single { grid-template-columns: minmax(0, 42rem); }
+    .support-card.primary { border: 2px solid var(--accent); background: var(--accent-soft); }
+    .support-icon {
+      width: 4rem;
+      height: 4rem;
+      margin-bottom: 1.25rem;
+      padding: 0.65rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: white;
+    }
+    .support-card .button-row { margin-top: 1.5rem; }
+    .support-card .button { width: 100%; }
+
+    .faq-list { border-top: 1px solid var(--line-strong); }
+    details { border-bottom: 1px solid var(--line); }
+    summary {
+      min-height: 4.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.2rem 0;
+      cursor: pointer;
+      color: var(--ink);
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      font-weight: 700;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--accent-ink); font-size: 1.5rem; font-weight: 500; }
+    details[open] summary::after { content: "−"; }
+    details p { max-width: 72ch; margin: -0.25rem 0 1.5rem; font-size: 0.96rem; }
+
+    footer { border-top: 1px solid var(--line); padding: 2rem var(--page-gutter); }
+    .footer-shell { width: min(100%, var(--content)); margin: 0 auto; display: flex; justify-content: space-between; gap: 1rem; }
+    footer p { margin: 0; color: var(--muted); font-size: 0.8rem; }
+
+    @media (max-width: 1050px) {
+      .desktop-nav { display: none; }
+      .menu-button { display: inline-flex; align-items: center; }
+      .section-head { grid-template-columns: 1fr; }
+      .rhythm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .rhythm-step:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; }
+      .rhythm-step:nth-child(4) { border-top: 1px solid var(--line); }
+      .facilitator-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .tools-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .outcome-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .setup-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (min-width: 1200px) {
+      .hero h1 { width: max-content; max-width: none; white-space: nowrap; font-size: clamp(4rem, 4.8vw, 4.4rem); }
+    }
+
+    @media (max-width: 900px) {
+      .roadmap-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .roadmap-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .roadmap-recording { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 720px) {
+      :root { --section-space: 4.75rem; }
+      html { scroll-padding-top: 4.75rem; }
+      .nav-shell { min-height: 4.25rem; }
+      .brand-divider, .brand-name { display: none; }
+      .hero { min-height: auto; padding-top: 5rem; }
+      h1 { max-width: 10ch; }
+      .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .fact:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; }
+      .fact:nth-child(4) { border-top: 1px solid var(--line); }
+      .rhythm-grid, .roadmap-grid, .live-grid, .support-grid, .facilitator-grid, .tools-grid, .setup-grid, .outcome-grid { grid-template-columns: 1fr; }
+      .rhythm-step, .rhythm-step + .rhythm-step { min-height: auto; display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: 1rem; padding: 1.4rem 0; border-left: 0; border-top: 0; border-bottom: 1px solid var(--line); }
+      .rhythm-step .step-number { grid-row: 1 / span 2; margin-bottom: 0; font-size: 2.5rem; }
+      .rhythm-step h3, .rhythm-step p { grid-column: 2; }
+      .rhythm-note { align-items: flex-start; flex-direction: column; gap: 0.2rem; }
+      .facilitator-card { min-height: auto; }
+      .tool-card { min-height: auto; }
+      .roadmap-card { min-height: auto; }
+      .roadmap-footer { flex-direction: column; align-items: stretch; }
+      .roadmap-actions { align-self: stretch; }
+      .roadmap-actions > .button, .roadmap-recording { flex: 1 1 0; }
+      .setup-card { min-height: auto; }
+      .footer-shell { flex-direction: column; }
+    }
+
+    @media (max-width: 420px) {
+      .button-row .button { width: 100%; }
+      .roadmap-actions { grid-template-columns: 1fr; }
+      .roadmap-recording { grid-column: auto; }
+      .facilitator-card .portrait { width: 6.5rem; min-height: 6.5rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/index.html#main-content">Przejdź do treści</a>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/index.html#start" aria-label="Kohorta 1 — początek strony">
+        <img class="brand-logo" src="./Kohorta 1 — Second Brain w Allegro_files/allegro-logo.png" alt="Allegro">
+        <span class="brand-divider" aria-hidden="true">/</span>
+        <span class="brand-name">Second Brain · Kohorta 1</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Główna nawigacja">
+        <a href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/index.html#rytm">Rytm kursu</a>
+        <a href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/index.html#prowadzacy">Prowadzący</a>
+        <a href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/index.html#narzedzia">Narzędzia</a>
+        <a href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/index.html#roadmapa">Roadmapa</a>
+        <a href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/tips-and-tricks/index.html">Tips &amp; Tricks</a>
+        <a href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/index.html#faq">FAQ</a>
+      </nav>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-navigation">Menu</button>
+    </div>
+    <nav class="mobile-nav" id="mobile-navigation" aria-label="Nawigacja mobilna">
+      <a href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/index.html#rytm">Rytm kursu</a>
+      <a href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/index.html#prowadzacy">Twoi prowadzący</a>
+      <a href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/index.html#narzedzia">Narzędzia</a>
+      <a href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/index.html#roadmapa">Roadmapa</a>
+      <a href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/tips-and-tricks/index.html">Tips &amp; Tricks</a>
+      <a href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/index.html#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="start">
+      <div class="container">
+        <div class="kicker-rule"></div>
+        <h1>Szkolenie „Allegro Second Brain”</h1>
+        <ul class="lead-points" aria-label="Zakres szkolenia">
+          <li>Od 02.09 zaczniesz budować własny Allegro Second Brain na realnym case’ie, produkcie lub projekcie.</li>
+          <li>Pięć sesji praktycznych use case’ów, wspólna praca na webinarach i materiały do pracy we własnym tempie.</li>
+        </ul>
+        <div class="button-row" style="margin-top: 2rem;">
+          <a class="button button-primary" href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/index.html#rytm">Jak działa kurs?</a>
+        </div>
+        <div class="facts" aria-label="Najważniejsze fakty o Kohorcie 1">
+          <div class="fact"><strong>02.09</strong><span>otrzymasz pakiet startowy</span></div>
+          <div class="fact"><strong>09.09</strong><span>pierwsza sesja</span></div>
+          <div class="fact"><strong>5 sesji</strong><span>praktycznych tematów</span></div>
+          <div class="fact"><strong>08.10</strong><span>ostatnia sesja</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="rytm">
+      <div class="container">
+        <div class="section-head single rhythm-head">
+          <div>
+            <span class="eyebrow">Rytm kursu</span>
+            <h2>Praktyczne PM use case’y, przećwiczone na żywo.</h2>
+            <div class="rhythm-note"><strong>Ty wybierasz tempo pracy.</strong><span>W całym kursie dajemy Ci pakiety zadań oraz przestrzeń do wspólnej pracy i zadawania pytań.</span></div>
+          </div>
+        </div>
+        <div class="rhythm-grid">
+          <article class="rhythm-step">
+            <span class="step-number">01</span>
+            <h3>Co tydzień nowe zadania</h3>
+            <p>Na początku tygodnia dostajesz zestaw materiałów i zadań do przećwiczenia konkretnych use case’ów.</p>
+          </article>
+          <article class="rhythm-step">
+            <span class="step-number">02</span>
+            <h3>Praca we własnym tempie</h3>
+            <p>Decydujesz, czy przerabiasz pakiet samodzielnie przed spotkaniem, czy dopiero na webinarze.</p>
+          </article>
+          <article class="rhythm-step">
+            <span class="step-number">03</span>
+            <h3>Webinar z demonstracją</h3>
+            <p>O 14:00 prowadzący przechodzi przez use case’y z danego tygodnia i pokazuje cały workflow na żywo.</p>
+          </article>
+          <article class="rhythm-step">
+            <span class="step-number">04</span>
+            <h3>Piątkowy Open Door</h3>
+            <p>O 10:00 możesz zadać pytania i wspólnie przejść przez to, co wymaga doprecyzowania.</p>
+          </article>
+        </div>
+        <div class="button-row rhythm-cta"><a class="button button-secondary" href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/index.html#roadmapa">Zobacz roadmapę</a></div>
+      </div>
+    </section>
+
+    <section id="prowadzacy">
+      <div class="container">
+        <div class="section-head single">
+          <div>
+            <span class="eyebrow">Twoi prowadzący</span>
+            <h2>Praktycy, którzy przechodzą tę drogę razem z Tobą.</h2>
+            <p class="section-intro">Każdy prowadzący odpowiada za konkretny fragment agendy i pokazuje własny sposób pracy na realnym kontekście.</p>
+          </div>
+        </div>
+        <div class="facilitator-grid">
+          <article class="facilitator-card">
+            <img class="portrait" src="./Kohorta 1 — Second Brain w Allegro_files/portrait-magdalena-transparent.png" alt="Magdalena Chmielewska-Tomczyk">
+            <h3>Magdalena Chmielewska-Tomczyk</h3>
+            <p class="title">Product Manager</p>
+          </article>
+          <article class="facilitator-card">
+            <img class="portrait" src="./Kohorta 1 — Second Brain w Allegro_files/portrait-daniel-transparent.png" alt="Daniel Woźniak">
+            <h3>Daniel Woźniak</h3>
+            <p class="title">Principal Product Manager</p>
+          </article>
+          <article class="facilitator-card">
+            <img class="portrait" src="./Kohorta 1 — Second Brain w Allegro_files/2026-08-06-photo-hubert-francuz.png" alt="Hubert Francuz">
+            <h3>Hubert Francuz</h3>
+            <p class="title">Principal Product Manager</p>
+          </article>
+          <article class="facilitator-card">
+            <img class="portrait" src="./Kohorta 1 — Second Brain w Allegro_files/2026-08-26-photo-konrad-synoradzki.png" alt="Konrad Synoradzki">
+            <h3>Konrad Synoradzki</h3>
+            <p class="title">Director, Product &amp; Engineering</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="narzedzia">
+      <div class="container">
+        <div class="section-head single">
+          <div>
+            <span class="eyebrow">Narzędzia kursu</span>
+            <h2>Twoje narzędzia: Codex i Obsidian.</h2>
+            <p class="section-intro">W trakcie kursu będziemy pracować z narzędziami Codex i Obsidian — razem tworzą środowisko do porządkowania kontekstu i pracy nad Twoim case’em.</p>
+          </div>
+        </div>
+        <div class="tools-grid">
+          <article class="tool-card">
+            <div class="tool-heading">
+              <div class="tool-icon codex" aria-hidden="true">
+                <img class="tool-logo" src="./Kohorta 1 — Second Brain w Allegro_files/codex-icon.png" alt="">
+              </div>
+              <h3>Codex</h3>
+            </div>
+            <p>W Codexie będziemy pracować z kontekstem, porządkować materiały i rozwijać nasz Brain za pomocą agentów AI.<strong class="tool-access-note">Licencję i dostęp do Codexa otrzymasz wkrótce.</strong></p>
+          </article>
+          <article class="tool-card">
+            <div class="tool-heading">
+              <div class="tool-icon obsidian" aria-hidden="true">
+                <img class="tool-logo" src="./Kohorta 1 — Second Brain w Allegro_files/obsidian-logo-gradient.svg" alt="">
+              </div>
+              <h3>Obsidian</h3>
+            </div>
+            <p>Obsidian to edytor tekstu, za pomocą którego zbudujesz i będziesz obsługiwać własny Second Brain. Możesz pobrać go już teraz — to darmowe i zatwierdzone narzędzie w Allegro.</p>
+            <a class="tool-link" href="https://obsidian.md/" target="_blank" rel="noreferrer">Pobierz Obsidian <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="roadmapa">
+      <div class="container">
+        <div class="section-head roadmap-head">
+          <div>
+            <span class="eyebrow">Roadmapa pięciu sesji</span>
+            <h2>Pięć spotkań.</h2>
+          </div>
+        </div>
+        <div class="roadmap-grid">
+          <article class="roadmap-card">
+            <div class="roadmap-card-heading">
+              <span class="roadmap-session-number">01</span>
+              <div>
+                <p class="date">09.09 · środa</p>
+                <h3>Po co nam Second Brain z AI?</h3>
+              </div>
+            </div>
+            <div class="roadmap-footer">
+              <div class="roadmap-actions">
+                <a class="button button-primary" href="https://drive.google.com/drive/folders/1Y5PY3sgy_dbYgIu1inSrw_inu-N0tRO0" target="_blank" rel="noreferrer">Google Drive</a>
+                <a class="button button-primary" href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/prezentacja/index.html" target="_blank" rel="noreferrer">Prezentacja</a>
+                <div class="roadmap-recording">
+                  <p class="roadmap-password">Kod dostępu: <code>*%#PG123</code></p>
+                  <a class="button button-primary" href="https://allegro.zoom.us/rec/share/MJaCwM8XSOcG5WGuTYikvhuTRceTyeHf41c1753jXQ5mRHcjLObGvMHyPxAg53Cc.pf0O_3PGuzU_W7p0" target="_blank" rel="noreferrer">Nagranie</a>
+                </div>
+              </div>
+              <div class="owner-line">
+                <span class="owner-label">Prowadzi</span>
+                <div class="owner-people">
+                  <span class="owner-person"><img src="./Kohorta 1 — Second Brain w Allegro_files/2026-08-06-photo-hubert-francuz.png" alt="" aria-hidden="true"><span>Hubert Francuz</span></span>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="roadmap-card">
+            <div class="roadmap-card-heading">
+              <span class="roadmap-session-number">02</span>
+              <div>
+                <p class="date">16.09 · środa</p>
+                <h3>Uruchom i skonfiguruj</h3>
+              </div>
+            </div>
+            <div class="roadmap-footer">
+              <div class="roadmap-actions">
+                <a class="button button-primary" href="https://drive.google.com/drive/folders/1wQylVaIc7actEe3mVrQ19slGHN8rgV3t" target="_blank" rel="noreferrer">Google Drive</a>
+                <a class="button button-primary" href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/prezentacja/index.html" target="_blank" rel="noreferrer">Prezentacja</a>
+                <div class="roadmap-recording">
+                  <p class="roadmap-password">Kod dostępu: <code>9o84cU!p</code></p>
+                  <a class="button button-primary" href="https://allegro.zoom.us/rec/share/34zKYRIyRriFqjc3MD2HbIkfQnIJ8WEshgPuxhkcGbs3yYo7SSD4TpjY1etETrUq.ix2G5YyFQFR4XrLP" target="_blank" rel="noreferrer">Nagranie</a>
+                </div>
+              </div>
+              <div class="owner-line">
+                <span class="owner-label">Prowadzą</span>
+                <div class="owner-people">
+                  <span class="owner-person"><img src="./Kohorta 1 — Second Brain w Allegro_files/portrait-daniel-transparent.png" alt="" aria-hidden="true"><span>Daniel Woźniak</span></span>
+                  <span class="owner-person"><img src="./Kohorta 1 — Second Brain w Allegro_files/2026-08-06-photo-hubert-francuz.png" alt="" aria-hidden="true"><span>Hubert Francuz</span></span>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="roadmap-card roadmap-card--highlight">
+            <div class="roadmap-card-heading">
+              <span class="roadmap-session-number">03</span>
+              <div>
+                <p class="date">23.09 · środa</p>
+                <h3>Źródła danych i ich analiza</h3>
+              </div>
+            </div>
+            <div class="roadmap-footer">
+              <div class="roadmap-actions">
+                <span class="button button-disabled" aria-disabled="true">Google Drive</span>
+                <a class="button button-primary" href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/prezentacja/sesja-03/index.html" target="_blank" rel="noreferrer">Prezentacja</a>
+                <div class="roadmap-recording">
+                  <p class="roadmap-password">Kod dostępu: <code>^xvxjv4.</code></p>
+                  <a class="button button-primary" href="https://allegro.zoom.us/rec/share/g3OLyaVSFtgZPHPZDi2XcMlyQ7Fg90wIhJ8M4bJ0fNdQI8VPwmHyi33mjBPKmxcn.ARBQ-n1Uvo3zCOzp" target="_blank" rel="noreferrer">Nagranie</a>
+                </div>
+              </div>
+              <div class="owner-line">
+                <span class="owner-label">Prowadzą</span>
+                <div class="owner-people">
+                  <span class="owner-person"><img src="./Kohorta 1 — Second Brain w Allegro_files/2026-08-06-photo-hubert-francuz.png" alt="" aria-hidden="true"><span>Hubert Francuz</span></span>
+                  <span class="owner-person"><img src="./Kohorta 1 — Second Brain w Allegro_files/portrait-daniel-transparent.png" alt="" aria-hidden="true"><span>Daniel Woźniak</span></span>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="roadmap-card">
+            <div class="roadmap-card-heading">
+              <span class="roadmap-session-number">04</span>
+              <div>
+                <p class="date">30.09 · środa</p>
+                <h3>Od rozmów do decyzji</h3>
+              </div>
+            </div>
+            <div class="roadmap-footer">
+              <div class="roadmap-actions single">
+                <a class="button button-primary" href="https://drive.google.com/drive/folders/1BBUA8PcafT4B-Btf1xbxibzoI2aEPY7h" target="_blank" rel="noreferrer">Google Drive</a>
+              </div>
+              <div class="owner-line">
+                <span class="owner-label">Prowadzą</span>
+                <div class="owner-people">
+                  <span class="owner-person"><img src="./Kohorta 1 — Second Brain w Allegro_files/portrait-magdalena-transparent.png" alt="" aria-hidden="true"><span>Magda Tomczyk</span></span>
+                  <span class="owner-person"><img src="./Kohorta 1 — Second Brain w Allegro_files/portrait-daniel-transparent.png" alt="" aria-hidden="true"><span>Daniel Woźniak</span></span>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="roadmap-card">
+            <div class="roadmap-card-heading">
+              <span class="roadmap-session-number">05</span>
+              <div>
+                <p class="date">08.10 · czwartek</p>
+                <h3>Od pomysłu do strategii</h3>
+              </div>
+            </div>
+            <div class="roadmap-footer">
+              <div class="owner-line">
+                <span class="owner-label">Prowadzą</span>
+                <div class="owner-people">
+                  <span class="owner-person"><img src="./Kohorta 1 — Second Brain w Allegro_files/portrait-magdalena-transparent.png" alt="" aria-hidden="true"><span>Magda Tomczyk</span></span>
+                  <span class="owner-person"><img src="./Kohorta 1 — Second Brain w Allegro_files/2026-08-26-photo-konrad-synoradzki.png" alt="" aria-hidden="true"><span>Konrad Synoradzki</span></span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="live">
+      <div class="container">
+        <div class="section-head single">
+          <div>
+            <span class="eyebrow">Jak pracujemy live</span>
+            <h2>Webinar i Open Door: dwa formaty wspólnej pracy.</h2>
+            <p class="section-intro">Sesja live służy wspólnej pracy na use case’ach tygodnia. W piątek możesz dopytać o to, co wymaga doprecyzowania.</p>
+          </div>
+        </div>
+        <div class="live-grid">
+          <article class="live-card">
+            <span class="eyebrow">Sesja live · 14:00–15:30</span>
+            <h3>Webinar z demonstracją</h3>
+            <ul class="clean-list">
+              <li>90 minut pracy na use case’ach z danego tygodnia.</li>
+              <li>Prowadzący pokazuje workflow krok po kroku.</li>
+              <li>Wspólnie przechodzimy od materiału do wyniku.</li>
+            </ul>
+          </article>
+          <article class="live-card">
+            <span class="eyebrow">Piątek · 10:00–10:30</span>
+            <h3>Open Door dla pytań</h3>
+            <ul class="clean-list">
+              <li>30 minut na pytania po tygodniowej pracy.</li>
+              <li>Przyjdź z tym, co chcesz doprecyzować lub przejść razem.</li>
+              <li>To przestrzeń na rozmowę o pakietach i Twoim kontekście.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="setup">
+      <div class="container">
+        <div class="section-head single">
+          <div>
+            <span class="eyebrow">Zrób przed startem</span>
+            <h2>Przygotuj się spokojnie przed pierwszym webinarem.</h2>
+          </div>
+        </div>
+        <div class="setup-banner">
+          <strong>02.09 · tydzień przed pierwszym webinarem</strong>
+          <p>Otrzymasz pakiet startowy: setup, szkielet Second Braina i pierwszy pakiet modułów.</p>
+        </div>
+        <div class="setup-grid">
+          <article class="setup-card">
+            <span class="card-label">01</span>
+            <h3>Zasady „BHP” pracy z AI</h3>
+            <p>Poznaj zasady bezpiecznej pracy z AI, zanim wprowadzisz materiały do swojego systemu.</p>
+          </article>
+          <article class="setup-card">
+            <span class="card-label">02</span>
+            <h3>Uruchom setup</h3>
+            <p>Skonfiguruj zatwierdzony toolchain i szkielet Second Braina. Linki pojawią się po potwierdzeniu dostępów.</p>
+          </article>
+          <article class="setup-card">
+            <span class="card-label">03</span>
+            <h3>Wybierz case, projekt lub produkt</h3>
+            <p>Przynieś realny problem, projekt lub produkt, na którym możesz bezpiecznie przećwiczyć pierwszy moduł.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="otrzymujesz">
+      <div class="container">
+        <div class="section-head single">
+          <div>
+            <span class="eyebrow">Co otrzymujesz</span>
+            <h2>Dobry punkt startowy, który możesz rozwijać po swojemu.</h2>
+          </div>
+        </div>
+        <div class="outcome-grid">
+          <article class="outcome-card"><span class="card-label">01</span><h3>Setup i szkielet</h3><p>Instrukcja wejścia oraz struktura Second Braina do dalszego dostosowania.</p></article>
+          <article class="outcome-card"><span class="card-label">02</span><h3>Paczki tygodniowe</h3><p>Materiały publikowane etapami przed właściwą sesją, zamiast całego programu naraz.</p></article>
+          <article class="outcome-card"><span class="card-label">03</span><h3>Biblioteka Skills</h3><p>Powtarzalne instrukcje do konkretnych zadań w pracy produktowej.</p></article>
+          <article class="outcome-card"><span class="card-label">04</span><h3>Wsparcie grupy</h3><p>Sesje live, piątkowy Open Door i zamknięty kanał Slack Kohorty 1.</p></article>
+          <article class="outcome-card"><span class="card-label">05</span><h3>Tips &amp; Tricks</h3><p>Krótka biblioteka sprawdzonych rad — od pierwszych kroków po zaawansowane workflowy.</p><a class="button button-secondary" href="https://statics.akubra.qxlint/prototyping/6f7cfde3-37de-43ca-b797-88f229826ff4/tips-and-tricks/index.html">Otwórz porady</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="wsparcie">
+      <div class="container">
+        <div class="section-head single">
+          <div>
+            <span class="eyebrow">Slack i organizacja</span>
+            <h2>Materiały i informacja organizacyjna w jednym miejscu.</h2>
+          </div>
+        </div>
+        <div class="support-grid single">
+          <article class="support-card primary">
+            <img class="support-icon" src="./Kohorta 1 — Second Brain w Allegro_files/slack-logo.svg" alt="">
+            <span class="eyebrow">Kohorta 1 na Slacku</span>
+            <h3>Materiały, przypomnienia i pytania w jednym miejscu.</h3>
+            <p>Po otrzymaniu maila o przyjęciu powinieneś mieć zaproszenia na wszystkie spotkania w kalendarzu. Jeśli któregoś nie widzisz, napisz na kanale Slack Kohorty 1.</p>
+            <div class="button-row">
+              <a class="button button-primary" href="https://allegro.slack.com/archives/C0BSSD1JYCW" target="_blank" rel="noreferrer">Otwórz Slack</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="kolejna-kohorta">
+      <div class="container">
+        <div class="section-head single">
+          <div>
+            <span class="eyebrow">Kolejna kohorta</span>
+            <h2>Kiedy będzie druga kohorta?</h2>
+          </div>
+        </div>
+        <div class="support-grid single">
+          <article class="support-card primary">
+            <h3>Zaczynamy od PM-ów. Potem otwieramy się szerzej.</h3>
+            <p>Kohorta 1 jest celowo ograniczona do Product Managerów. Prowadzący są PM-ami, więc zaczynamy od produktowych use case’ów — to najprostszy sposób, żeby wspólnie nauczyć się, jak dobrze prowadzić ten kurs.</p>
+            <p>Druga kohorta wystartuje jeszcze w tym roku i będzie dostosowana do szerszej audiencji. Jeśli chcesz być w niej uwzględniony, napisz do jednego z prowadzących ten kurs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="faq">
+      <div class="container">
+        <div class="section-head single">
+          <div>
+            <span class="eyebrow">FAQ</span>
+            <h2>Najważniejsze odpowiedzi przed startem.</h2>
+          </div>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Czy muszę przygotować coś przed pierwszą sesją?</summary>
+            <p>Nie. Możesz zacząć od webinaru, a paczkę zadań przerobić później we własnym tempie.</p>
+          </details>
+          <details>
+            <summary>Czy muszę uczestniczyć w każdym spotkaniu?</summary>
+            <p>Nie ustalono obowiązkowej obecności. Materiały są przygotowane do pracy asynchronicznej, a nagranie pierwszej sesji znajdziesz przy jej kafelku w roadmapie. O kolejnych nagraniach poinformujemy osobno.</p>
+          </details>
+          <details>
+            <summary>Czy jest egzamin albo praca zaliczeniowa?</summary>
+            <p>Nie. Kurs nie ma testu, egzaminu, certyfikacji ani progu ukończenia.</p>
+          </details>
+          <details>
+            <summary>Jaki case, projekt lub produkt wybrać?</summary>
+            <p>Wybierz jeden realny temat, do którego masz prawo użyć materiałów. Nie potrzebujesz gotowego briefu — wystarczy kontekst, który chcesz uporządkować.</p>
+          </details>
+          <details>
+            <summary>Jakich danych nie przekazywać?</summary>
+            <p>Nie wgrywaj danych, których nie wolno przechowywać lub udostępniać. Jeśli klasyfikacja jest niejasna, zatrzymaj się i zapytaj na Open Door.</p>
+          </details>
+          <details>
+            <summary>Co jeśli nie mam dostępu do narzędzia?</summary>
+            <p>Nie zakładaj dostępu na własną rękę. Finalny toolchain, entitlementy i instrukcja zostaną potwierdzone przed dystrybucją pakietu.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-shell">
+      <p>Second Brain w Allegro · Kohorta 1</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const mobileNavigation = document.querySelector('.mobile-nav');
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      mobileNavigation.classList.toggle('open', !isOpen);
+      document.body.classList.toggle('menu-open', !isOpen);
+    });
+
+    mobileNavigation.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        menuButton.setAttribute('aria-expanded', 'false');
+        mobileNavigation.classList.remove('open');
+        document.body.classList.remove('menu-open');
+      });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && mobileNavigation.classList.contains('open')) {
+        menuButton.setAttribute('aria-expanded', 'false');
+        mobileNavigation.classList.remove('open');
+        document.body.classList.remove('menu-open');
+        menuButton.focus();
+      }
+    });
+  </script>
+
+
+</body></html>
