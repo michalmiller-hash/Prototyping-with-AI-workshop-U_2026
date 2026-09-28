@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="{{ description or site.lead }}">
+    <title>{{ title or site.title }}{% if title %} — {{ site.title }}{% endif %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script src="/assets/site.js" defer></script>
+  </head>
+  <body data-page="{{ page_type }}"{% if moduleEntry %} data-module-number="{{ moduleEntry.data.number }}"{% endif %}>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+
+    {% set modules = collections.modules | sortByNumber %}
+    <header class="site-header">
+      <div class="header-inner container">
+        <a class="brand" href="/#wprowadzenie" data-course-link aria-label="{{ site.title }} — wprowadzenie">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span class="brand-name">Prototypowanie<br><strong>z AI</strong></span>
+        </a>
+
+        <nav class="desktop-navigation" aria-label="Nawigacja po kursie">
+          <a class="navigation-intro{% if page_type == 'home' %} is-current{% endif %}" href="/#wprowadzenie" data-course-link data-nav-intro>Wprowadzenie</a>
+          <div class="module-navigation" aria-label="Moduły">
+            {% for item in modules %}
+              <a class="module-navigation-link{% if moduleEntry and moduleEntry.data.number == item.data.number %} is-current{% endif %}" href="{% if page_type == 'home' %}#{{ item.data.slug }}{% else %}/materials/{{ item.data.slug }}/{% endif %}" data-course-link data-nav-module="{{ item.data.number }}" aria-label="Moduł {{ item.data.number }}. {{ item.data.title }}" title="Moduł {{ item.data.number }}. {{ item.data.title }}">{{ item.data.number | pad2 }}</a>
+            {% endfor %}
+          </div>
+        </nav>
+
+        <div class="header-actions">
+          <span class="presenter-badge" data-presenter-only hidden>Tryb prowadzącego</span>
+          {% if page_type == 'home' %}
+            <div class="step-controls" data-home-step-controls>
+              <a class="step-link step-link-disabled" href="#wprowadzenie" data-home-prev aria-disabled="true"><span aria-hidden="true">←</span> Poprzedni</a>
+              <a class="step-link" href="#modul-1" data-home-next>Następny <span aria-hidden="true">→</span></a>
+            </div>
+          {% else %}
+            {% set previousNumber = moduleEntry.data.number - 1 %}
+            {% set nextNumber = moduleEntry.data.number + 1 %}
+            <a class="step-link" href="{% if moduleEntry.data.number == 1 %}/#wprowadzenie{% else %}/materials/modul-{{ previousNumber }}/{% endif %}" data-course-link><span aria-hidden="true">←</span> Poprzedni</a>
+            {% if moduleEntry.data.number < modules.length %}
+              <a class="step-link" href="/materials/modul-{{ nextNumber }}/" data-course-link>Następny <span aria-hidden="true">→</span></a>
+            {% else %}
+              <span class="step-link step-link-disabled" aria-disabled="true">Następny</span>
+            {% endif %}
+          {% endif %}
+        </div>
+
+        <button class="menu-toggle" type="button" data-menu-toggle aria-controls="mobile-navigation" aria-expanded="false" aria-label="Otwórz nawigację">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <nav class="mobile-navigation" id="mobile-navigation" aria-label="Nawigacja po kursie" hidden>
+        <div class="mobile-navigation-inner container">
+          <a class="mobile-intro-link" href="/#wprowadzenie" data-course-link>Wprowadzenie</a>
+          <p class="mobile-navigation-label">Moduły</p>
+          <ol class="mobile-module-list">
+            {% for item in modules %}
+              <li><a href="{% if page_type == 'home' %}#{{ item.data.slug }}{% else %}/materials/{{ item.data.slug }}/{% endif %}" data-course-link><span>{{ item.data.number | pad2 }}</span> {{ item.data.title }}</a></li>
+            {% endfor %}
+          </ol>
+          <div class="mobile-step-links">
+            {% if page_type == 'home' %}
+              <a class="step-link step-link-disabled" href="#wprowadzenie" data-home-prev aria-disabled="true"><span aria-hidden="true">←</span> Poprzedni</a>
+              <a class="step-link" href="#modul-1" data-home-next>Następny <span aria-hidden="true">→</span></a>
+            {% else %}
+              <a class="step-link" href="{% if moduleEntry.data.number == 1 %}/#wprowadzenie{% else %}/materials/modul-{{ previousNumber }}/{% endif %}" data-course-link><span aria-hidden="true">←</span> Poprzedni</a>
+              {% if moduleEntry.data.number < modules.length %}
+                <a class="step-link" href="/materials/modul-{{ nextNumber }}/" data-course-link>Następny <span aria-hidden="true">→</span></a>
+              {% else %}
+                <span class="step-link step-link-disabled" aria-disabled="true">Następny</span>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      {{ content | safe }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>{{ site.title }}</span>
+        <span>Materiały warsztatowe · 8 modułów</span>
+      </div>
+    </footer>
+  </body>
+</html>

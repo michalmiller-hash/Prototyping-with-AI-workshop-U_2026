@@ -1,0 +1,15 @@
+<aside class="module-time-box" aria-label="Czas modułu: {{ item.data.duration }} minut">
+  <div data-participant-time>
+    <span class="small-label">Czas modułu</span>
+    <strong>{{ item.data.duration }} <span>minut</span></strong>
+  </div>
+  <div class="timer" data-timer data-duration="{{ item.data.duration }}" data-module-number="{{ item.data.number }}" data-presenter-only hidden>
+    <span class="small-label">Pozostały czas</span>
+    <time data-timer-display datetime="PT{{ item.data.duration }}M" aria-live="off">{{ item.data.duration }}:00</time>
+    <p class="timer-status" data-timer-status role="status" aria-live="polite">Gotowy do rozpoczęcia</p>
+    <div class="timer-actions">
+      <button class="button button-primary" type="button" data-timer-toggle>Start</button>
+      <button class="button button-secondary" type="button" data-timer-reset>Reset</button>
+    </div>
+  </div>
+</aside>
