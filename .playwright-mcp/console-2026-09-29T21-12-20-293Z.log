@@ -1,0 +1,22 @@
+[  996424ms] [LOG] [11ty][21:28:56.717 UTC] Connected @ http://localhost:8002/.11ty/reload-client.js:20
+[  996425ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8002/favicon.ico:0
+[  997960ms] [LOG] [11ty][21:28:58.253 UTC] Connected @ http://localhost:8002/.11ty/reload-client.js:20
+[ 1031866ms] [LOG] [11ty][21:29:32.158 UTC] HTML delta applied without page reload. @ http://localhost:8002/.11ty/reload-client.js:20
+[ 1158297ms] [LOG] [11ty][21:31:38.590 UTC] Connected @ http://localhost:8002/.11ty/reload-client.js:20
+[ 1165145ms] [LOG] [11ty][21:31:45.438 UTC] Connected @ http://localhost:8002/.11ty/reload-client.js:20
+[ 1186452ms] [LOG] [11ty][21:32:06.745 UTC] Connected @ http://localhost:8002/.11ty/reload-client.js:20
+[ 1296330ms] [LOG] [11ty][21:33:56.623 UTC] CSS updated without page reload. @ http://localhost:8002/.11ty/reload-client.js:20
+[ 1299637ms] [LOG] [11ty][21:33:59.929 UTC] Connected @ http://localhost:8002/.11ty/reload-client.js:20
+[ 1312221ms] [LOG] [11ty][21:34:12.513 UTC] CSS updated without page reload. @ http://localhost:8002/.11ty/reload-client.js:20
+[ 1348289ms] [LOG] [11ty][21:34:48.581 UTC] CSS updated without page reload. @ http://localhost:8002/.11ty/reload-client.js:20
+[ 1351861ms] [LOG] [11ty][21:34:52.153 UTC] Connected @ http://localhost:8002/.11ty/reload-client.js:20
+[ 1366773ms] [LOG] [11ty][21:35:07.065 UTC] CSS updated without page reload. @ http://localhost:8002/.11ty/reload-client.js:20
+[ 1373757ms] [LOG] [11ty][21:35:14.049 UTC] CSS updated without page reload. @ http://localhost:8002/.11ty/reload-client.js:20
+[ 1376998ms] [LOG] [11ty][21:35:17.290 UTC] Connected @ http://localhost:8002/.11ty/reload-client.js:20
+[ 1388811ms] [LOG] [11ty][21:35:29.104 UTC] CSS updated without page reload. @ http://localhost:8002/.11ty/reload-client.js:20
+[ 1446516ms] [LOG] [11ty][21:36:26.808 UTC] CSS updated without page reload. @ http://localhost:8002/.11ty/reload-client.js:20
+[ 1450118ms] [LOG] [11ty][21:36:30.410 UTC] Connected @ http://localhost:8002/.11ty/reload-client.js:20
+[ 1462380ms] [LOG] [11ty][21:36:42.672 UTC] CSS updated without page reload. @ http://localhost:8002/.11ty/reload-client.js:20
+[ 1547757ms] [LOG] [11ty][21:38:08.050 UTC] CSS updated without page reload. @ http://localhost:8002/.11ty/reload-client.js:20
+[ 1551160ms] [LOG] [11ty][21:38:11.452 UTC] Connected @ http://localhost:8002/.11ty/reload-client.js:20
+[ 1563785ms] [LOG] [11ty][21:38:24.077 UTC] CSS updated without page reload. @ http://localhost:8002/.11ty/reload-client.js:20

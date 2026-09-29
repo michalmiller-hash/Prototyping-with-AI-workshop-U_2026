@@ -1,0 +1,9 @@
+[     263ms] [LOG] [11ty][20:13:00.053 UTC] Connected @ http://localhost:8002/.11ty/reload-client.js:20
+[     376ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8002/favicon.ico:0
+[   18199ms] [LOG] [11ty][20:13:17.990 UTC] HTML delta applied without page reload. @ http://localhost:8002/.11ty/reload-client.js:20
+[   64531ms] [ERROR] [11ty][20:14:04.321 UTC] Build error: Having trouble reading front matter from template ./src/content/moduly/modul-01.md {stack: TemplateContentFrontMatterError: Having trouble re…e_modules/@11ty/eleventy/src/Eleventy.js:1438:19), message: Having trouble reading front matter from template ./src/content/moduly/modul-01.md, name: TemplateContentFrontMatterError, originalError: Object, __errorAlreadyLogged: true} @ http://localhost:8002/.11ty/reload-client.js:20
+[   97963ms] [LOG] [11ty][20:14:37.753 UTC] Page reload initiated. @ http://localhost:8002/.11ty/reload-client.js:20
+[   98015ms] [LOG] [11ty][20:14:37.805 UTC] Connected @ http://localhost:8002/.11ty/reload-client.js:20
+[  104325ms] [LOG] [11ty][20:14:44.115 UTC] HTML delta applied without page reload. @ http://localhost:8002/.11ty/reload-client.js:20
+[  124966ms] [LOG] [11ty][20:15:04.757 UTC] HTML delta applied without page reload. @ http://localhost:8002/.11ty/reload-client.js:20
+[  167861ms] [LOG] [11ty][20:15:47.651 UTC] HTML delta applied without page reload. @ http://localhost:8002/.11ty/reload-client.js:20

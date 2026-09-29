@@ -1,0 +1,600 @@
+- generic [active] [ref=e1]:
+  - link "Przejdź do treści" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Prototypowanie za pomocą narzędzi AI — wprowadzenie" [ref=e5] [cursor=pointer]:
+        - /url: /#wprowadzenie
+        - generic [ref=e11]:
+          - text: Prototypowanie
+          - strong [ref=e12]: z AI
+      - navigation "Nawigacja po kursie" [ref=e13]:
+        - link "Wprowadzenie" [ref=e14] [cursor=pointer]:
+          - /url: /#wprowadzenie
+        - generic "Moduły" [ref=e15]:
+          - link "Moduł 1. Myślenie przez tworzenie w pracy z AI" [ref=e16] [cursor=pointer]:
+            - /url: "#modul-1"
+            - text: "01"
+          - link "Moduł 2. Rodzaje i wierność prototypów" [ref=e17] [cursor=pointer]:
+            - /url: "#modul-2"
+            - text: "02"
+          - link "Moduł 3. Przygotowanie kontekstu" [ref=e18] [cursor=pointer]:
+            - /url: "#modul-3"
+            - text: "03"
+          - link "Moduł 4. Interakcje poza statycznym ekranem" [ref=e19] [cursor=pointer]:
+            - /url: "#modul-4"
+            - text: "04"
+          - link "Moduł 5. Struktura prototypu i zakres zmiany" [ref=e20] [cursor=pointer]:
+            - /url: "#modul-5"
+            - text: "05"
+          - link "Moduł 6. Debugowanie i ukierunkowana poprawka" [ref=e21] [cursor=pointer]:
+            - /url: "#modul-6"
+            - text: "06"
+          - link "Moduł 7. Skill prototypowania z AI a zasady" [ref=e22] [cursor=pointer]:
+            - /url: "#modul-7"
+            - text: "07"
+          - 'link "Moduł 8. Synteza: roboczy Skill i lista zasad" [ref=e23] [cursor=pointer]':
+            - /url: "#modul-8"
+            - text: "08"
+      - generic [ref=e25]:
+        - link "Poprzedni" [disabled] [ref=e26]:
+          - /url: "#wprowadzenie"
+          - generic [aria-hidden] [ref=e27]: ←
+          - text: Poprzedni
+        - link "Następny" [ref=e28] [cursor=pointer]:
+          - /url: "#modul-1"
+          - text: Następny
+          - generic [aria-hidden] [ref=e29]: →
+  - main [ref=e30]:
+    - region [ref=e31]:
+      - heading "Prototypowanie za pomocą narzędzi AI" [level=1] [ref=e34]: Prototypowanie za pomocąnarzędzi AI
+      - region [ref=e35]:
+        - generic [ref=e36]:
+          - heading "Założenia warsztatu" [level=2] [ref=e37]
+          - generic [ref=e38]:
+            - generic [ref=e39]:
+              - term [ref=e40]: 4,5 godziny
+              - definition [ref=e41]: łączny czas warsztatu
+            - generic [ref=e42]:
+              - term [ref=e43]: 8 modułów
+              - definition [ref=e44]: każdy z zaplanowaną pulą czasu
+            - generic [ref=e45]:
+              - term [ref=e46]: 2 przerwy
+              - definition [ref=e47]: w trakcie spotkania
+          - paragraph [ref=e48]: Przez cały warsztat rozwijasz ten sam prototyp aplikacji związanej z wybranym przez siebie gatunkiem muzycznym. Samodzielnie decydujesz o jego kierunku i sposobie rozbudowy.
+          - paragraph [ref=e49]: Celem jest nauka używania narzędzi AI w procesie prototypowania, a nie stworzenie dopracowanego produktu.
+      - region [ref=e50]:
+        - generic [ref=e51]:
+          - heading "Co będziesz umieć po warsztacie?" [level=2] [ref=e52]
+          - list [ref=e53]:
+            - listitem [ref=e54]: Dobierać rodzaj i wierność prototypu do pytania.
+            - listitem [ref=e55]: Przygotować użyteczny kontekst do zadania.
+            - listitem [ref=e56]: Opisywać interakcję przez działanie, stan, przejście i rezultat.
+            - listitem [ref=e57]: Rozpoznawać strukturę potrzebną do ograniczonej zmiany.
+            - listitem [ref=e58]: Świadomie zarządzać kontekstem, zakresem generowania i iteracją.
+            - listitem [ref=e59]: Zmieniać prototyp i wyjaśniać, co poprawiła zmiana.
+            - listitem [ref=e60]: Zbierać powtarzalną metodę pracy.
+      - region [ref=e61]:
+        - generic [ref=e62]:
+          - heading "Program i agenda" [level=2] [ref=e63]
+          - table [ref=e64]:
+            - rowgroup [ref=e65]:
+              - row [ref=e66]:
+                - columnheader "Blok" [ref=e67]
+                - columnheader "Godziny" [ref=e68]
+                - columnheader "Minuty" [ref=e69]
+            - rowgroup [ref=e70]:
+              - row [ref=e71]:
+                - 'rowheader "Otwarcie: cel, narzędzie, zasady pracy i wybór gatunku" [ref=e72]'
+                - cell "09:00–09:15" [ref=e73]
+                - cell "15" [ref=e74]
+              - row [ref=e75]:
+                - rowheader "1. Myślenie przez tworzenie w pracy z AI" [ref=e76]
+                - cell "09:15–09:40" [ref=e77]
+                - cell "25" [ref=e78]
+              - row [ref=e79]:
+                - rowheader "2. Rodzaje i wierność prototypów" [ref=e80]
+                - cell "09:40–10:05" [ref=e81]
+                - cell "25" [ref=e82]
+              - row [ref=e83]:
+                - rowheader "3. Przygotowanie kontekstu" [ref=e84]
+                - cell "10:05–10:40" [ref=e85]
+                - cell "35" [ref=e86]
+              - row [ref=e87]:
+                - rowheader "Przerwa" [ref=e88]
+                - cell "10:40–10:50" [ref=e89]
+                - cell "10" [ref=e90]
+              - row [ref=e91]:
+                - rowheader "4. Interakcje poza statycznym ekranem" [ref=e92]
+                - cell "10:50–11:25" [ref=e93]
+                - cell "35" [ref=e94]
+              - row [ref=e95]:
+                - rowheader "5. Struktura prototypu i zakres zmiany" [ref=e96]
+                - cell "11:25–11:50" [ref=e97]
+                - cell "25" [ref=e98]
+              - row [ref=e99]:
+                - rowheader "6. Debugowanie, ukierunkowana poprawka i porównanie" [ref=e100]
+                - cell "11:50–12:25" [ref=e101]
+                - cell "35" [ref=e102]
+              - row [ref=e103]:
+                - rowheader "Przerwa" [ref=e104]
+                - cell "12:25–12:35" [ref=e105]
+                - cell "10" [ref=e106]
+              - row [ref=e107]:
+                - rowheader "7. Skill prototypowania z AI a zasady" [ref=e108]
+                - cell "12:35–13:00" [ref=e109]
+                - cell "25" [ref=e110]
+              - row [ref=e111]:
+                - 'rowheader "8. Synteza: roboczy Skill i lista zasad" [ref=e112]'
+                - cell "13:00–13:20" [ref=e113]
+                - cell "20" [ref=e114]
+              - row [ref=e115]:
+                - 'rowheader "Zamknięcie: samoocena i następny krok" [ref=e116]'
+                - cell "13:20–13:30" [ref=e117]
+                - cell "10" [ref=e118]
+            - rowgroup [ref=e119]:
+              - row [ref=e120]:
+                - rowheader "Razem" [ref=e121]
+                - cell "09:00–13:30" [ref=e122]
+                - cell "270" [ref=e123]
+          - link "Przejdź do modułu 1" [ref=e124] [cursor=pointer]:
+            - /url: "#modul-1"
+            - text: Przejdź do modułu 1
+            - generic [aria-hidden] [ref=e125]: ↓
+    - region [ref=e126]:
+      - generic [ref=e127]:
+        - generic [ref=e128]:
+          - generic [ref=e129]:
+            - paragraph [ref=e130]: Moduł 01 / 08
+            - heading "Myślenie przez tworzenie w pracy z AI" [level=2] [ref=e132]
+          - 'complementary "Czas modułu: 25 minut" [ref=e133]':
+            - generic [ref=e134]:
+              - generic [ref=e135]: Czas modułu
+              - strong [ref=e136]: 25 minut
+        - region [ref=e137]:
+          - generic [ref=e138]:
+            - generic [ref=e139]:
+              - paragraph [ref=e140]:
+                - generic [ref=e141]: "01"
+                - text: Wprowadzenie do tematu
+              - heading "Kluczowa myśl" [level=3] [ref=e142]
+              - paragraph [ref=e143]: Thinking Through Making zakłada, że część wiedzy powstaje w trakcie pracy. Kiedy tworzysz i oglądasz możliwe rozwiązanie, możesz zauważyć coś, czego nie było widać, gdy pomysł pozostawał w głowie.
+              - paragraph [ref=e144]: W projektowaniu materiałem może być szkic, tekst, diagram lub prototyp. Donald Schön opisywał projektowanie jako „reflective conversation with materials” — rozmowę, w której działanie zmienia materiał, a jego odpowiedź zmienia nasze rozumienie.
+            - blockquote [ref=e145]:
+              - paragraph [ref=e146]: „Reflective conversation with materials”
+              - generic [ref=e147]: "Donald Schön: projektant działa na materiale, obserwuje jego odpowiedź i na tej podstawie zmienia dalsze działanie."
+          - region [ref=e148]:
+            - heading "Myślenie i tworzenie tworzą pętlę" [level=3] [ref=e149]
+            - list [ref=e150]:
+              - listitem [ref=e151]:
+                - generic [ref=e152]: "01"
+                - strong [ref=e153]: Intencja
+                - paragraph [ref=e154]: Co chcę zrozumieć lub zdecydować?
+              - listitem [ref=e155]:
+                - generic [ref=e156]: "02"
+                - strong [ref=e157]: Działanie
+                - paragraph [ref=e158]: Szkicuję, opisuję albo buduję.
+              - listitem [ref=e159]:
+                - generic [ref=e160]: "03"
+                - strong [ref=e161]: Artefakt
+                - paragraph [ref=e162]: Mam coś konkretnego do obejrzenia.
+              - listitem [ref=e163]:
+                - generic [ref=e164]: "04"
+                - strong [ref=e165]: Obserwacja
+                - paragraph [ref=e166]: Co faktycznie widzę lub mogę zrobić?
+              - listitem [ref=e167]:
+                - generic [ref=e168]: "05"
+                - strong [ref=e169]: Zaskoczenie
+                - paragraph [ref=e170]: Co wygląda inaczej, niż zakładałem?
+              - listitem [ref=e171]:
+                - generic [ref=e172]: "06"
+                - strong [ref=e173]: Nowe rozumienie
+                - paragraph [ref=e174]: Co teraz wiem albo widzę inaczej?
+              - listitem [ref=e175]:
+                - generic [ref=e176]: "07"
+                - strong [ref=e177]: Kolejne działanie
+                - paragraph [ref=e178]: Co zmienię, porównam lub sprawdzę?
+            - paragraph [ref=e179]: W Tetrisie obrót klocka może nie przybliżać bezpośrednio do wyniku, ale pomaga zobaczyć, gdzie klocek pasuje. W projektowaniu też czasem działamy po to, by lepiej dostrzec możliwości.
+          - region [ref=e180]:
+            - generic [ref=e181]:
+              - heading "AI ma wspierać Twój kolejny ruch" [level=3] [ref=e182]
+              - paragraph [ref=e183]: AI może ograniczyć żmudne wykonanie, ale nie powinno odbierać Ci działań, dzięki którym odkrywasz i rozumiesz problem. Jeśli tylko prosisz o gotową odpowiedź i ją oceniasz, łatwo stajesz się recenzentem zamiast współtwórcą. Zmieniaj wynik, porównuj kierunki i wybieraj następny ruch.
+            - generic "Cztery role AI w procesie tworzenia" [ref=e184]:
+              - generic [ref=e185]:
+                - strong [ref=e186]: Prowokator
+                - paragraph [ref=e187]: Otwiera nowe kierunki pytaniami i kontrprzykładami.
+              - generic [ref=e188]:
+                - strong [ref=e189]: Krytyk
+                - paragraph [ref=e190]: Pomaga dostrzec napięcia i konsekwencje pomysłu.
+              - generic [ref=e191]:
+                - strong [ref=e192]: Generator
+                - paragraph [ref=e193]: Tworzy warianty, które możesz porównać i zmienić.
+              - generic [ref=e194]:
+                - strong [ref=e195]: Wykonawca
+                - paragraph [ref=e196]: Realizuje wybrany kierunek i dopracowuje szczegóły.
+            - paragraph [ref=e197]: Dopracowany ekran nie oznacza dopracowanego pomysłu. Ładny prototyp nie dowodzi, że dobrze rozumiesz problem ani że rozwiązanie odpowiada na potrzebę użytkownika.
+            - paragraph [ref=e198]: Największe ryzyko pojawia się, gdy AI od razu wykonuje rozwiązanie, zanim zdążysz zbadać różne kierunki. W warsztacie będziemy używać AI do kolejnych ruchów w procesie tworzenia, a nie tylko do otrzymywania gotowych odpowiedzi.
+        - complementary [ref=e199]:
+          - paragraph [ref=e200]: Zadanie praktyczne
+          - paragraph [ref=e201]: Tu będzie opis zadania.
+      - link "Pogłębienie tematu w Materials" [ref=e202] [cursor=pointer]:
+        - /url: /materials/modul-1/
+        - text: Pogłębienie tematu w Materials
+        - generic [aria-hidden] [ref=e203]: ↗
+    - region [ref=e204]:
+      - generic [ref=e205]:
+        - generic [ref=e206]:
+          - generic [ref=e207]:
+            - paragraph [ref=e208]: Moduł 02 / 08
+            - heading "Rodzaje i wierność prototypów" [level=2] [ref=e210]
+            - paragraph [ref=e211]: Uczestnik dobiera rodzaj prototypu, poziom wierności i zakres do własnego pytania oraz zapisuje, jaki dowód chce uzyskać.
+          - 'complementary "Czas modułu: 25 minut" [ref=e212]':
+            - generic [ref=e213]:
+              - generic [ref=e214]: Czas modułu
+              - strong [ref=e215]: 25 minut
+        - generic [ref=e216]:
+          - article [ref=e217]:
+            - paragraph [ref=e218]:
+              - generic [ref=e219]: "01"
+              - text: Wprowadzenie do tematu
+            - heading "Kluczowa myśl" [level=3] [ref=e220]
+            - paragraph [ref=e221]: Dobierz prototyp do pytania. Prototyp koncepcyjny pomaga eksplorować alternatywy, projektowy doprecyzować kierunek, badawczy obserwować zachowanie lub reakcję, a techniczny sprawdzić wykonalność. Wierność UI i zakres to osobne decyzje. Wysoka wierność nie oznacza gotowości do wdrożenia.
+            - generic [ref=e222]:
+              - generic [aria-hidden] [ref=e223]: ↳
+              - text: Wybierz najmniejszy zakres i poziom wierności, które pozwolą odpowiedzieć na pytanie.
+          - article [ref=e224]:
+            - paragraph [ref=e225]:
+              - generic [ref=e226]: "02"
+              - text: Zadanie praktyczne
+            - heading "Dopasuj prototyp do pytania" [level=3] [ref=e227]
+            - paragraph [ref=e228]:
+              - strong [ref=e229]: "Punkt wyjścia:"
+              - text: karta pytania z modułu 1 i aktualny stan własnej aplikacji.
+            - list [ref=e230]:
+              - listitem [ref=e231]: Wybierz, czy teraz eksplorujesz alternatywy, doprecyzowujesz kierunek, sprawdzasz zachowanie/reakcję czy wykonalność.
+              - listitem [ref=e232]: Wybierz potrzebny poziom wierności oraz zakres.
+              - listitem [ref=e233]: "Dopisz jedno kryterium: po czym poznasz, że prototyp dostarczył informacji do pytania."
+              - listitem [ref=e234]: Poproś AI o kolejną zmianę tylko w granicach swojego wyboru; możesz też zdecydować, że obecna wersja już odpowiada na pytanie.
+            - generic [ref=e235]:
+              - generic [ref=e236]: Sprawdź dla siebie
+              - list [ref=e237]:
+                - listitem [ref=e238]: Czy wybrałem typ ze względu na pytanie?
+                - listitem [ref=e239]: Czy oddzieliłem cel od dopracowania UI?
+                - listitem [ref=e240]: Czy nie uznaję wyglądu za dowód gotowości produktu?
+        - generic [ref=e241]:
+          - generic [ref=e242]:
+            - generic [ref=e243]: Rezultat
+            - paragraph [ref=e244]: Karta decyzji z celem, wiernością, zakresem, kryterium i ewentualną zmianą własnego projektu.
+          - generic [ref=e245]:
+            - generic [ref=e246]: Dobra praktyka
+            - paragraph [ref=e247]: Wybierz najmniejszy zakres i poziom wierności, które pozwolą odpowiedzieć na pytanie.
+          - link "Pogłęb teorię" [ref=e248] [cursor=pointer]:
+            - /url: /materials/modul-2/
+            - text: Pogłęb teorię
+            - generic [aria-hidden] [ref=e249]: ↗
+    - region [ref=e250]:
+      - generic [ref=e251]:
+        - generic [ref=e252]:
+          - generic [ref=e253]:
+            - paragraph [ref=e254]: Moduł 03 / 08
+            - heading "Przygotowanie kontekstu" [level=2] [ref=e256]
+            - paragraph [ref=e257]: Uczestnik przygotowuje krótki, uporządkowany kontekst do zadania w swojej aplikacji i potrafi wyjaśnić, które informacje są niezbędne dla tego zadania.
+          - 'complementary "Czas modułu: 35 minut" [ref=e258]':
+            - generic [ref=e259]:
+              - generic [ref=e260]: Czas modułu
+              - strong [ref=e261]: 35 minut
+        - generic [ref=e262]:
+          - article [ref=e263]:
+            - paragraph [ref=e264]:
+              - generic [ref=e265]: "01"
+              - text: Wprowadzenie do tematu
+            - heading "Kluczowa myśl" [level=3] [ref=e266]
+            - paragraph [ref=e267]: "Kontekst to informacje, które pomagają AI wykonać konkretne zadanie. Dobierz je do celu: zachowanie i ograniczenia (funkcjonalne), wygląd lub odniesienie (wizualne), oraz dane i ich strukturę (danych). Uporządkuj je tak, by wiadomo było, co jest wymaganiem, przykładem, a co pozostaje otwarte."
+            - generic [ref=e268]:
+              - generic [aria-hidden] [ref=e269]: ↳
+              - text: Daj AI kontekst wystarczający do zadania, a zbędny zostaw poza bieżącą prośbą.
+          - article [ref=e270]:
+            - paragraph [ref=e271]:
+              - generic [ref=e272]: "02"
+              - text: Zadanie praktyczne
+            - heading "Spakuj niezbędny kontekst" [level=3] [ref=e273]
+            - paragraph [ref=e274]:
+              - strong [ref=e275]: "Punkt wyjścia:"
+              - text: wybrany przez uczestnika element, pytanie lub niepewność związana z jego aplikacją; decyzja o celu/wierności z modułu 2.
+            - list [ref=e276]:
+              - listitem [ref=e277]: Wybierz element, pytanie lub niepewność z własnej aplikacji i określ, czego chcesz się dowiedzieć.
+              - listitem [ref=e278]: "Przygotuj krótki kontekst: cel, potrzebne zachowanie i ograniczenia, odniesienie wizualne oraz dane; zaznacz elementy, które nie mają znaczenia dla zadania."
+              - listitem [ref=e279]: Oznacz informacje jako ustalone, przykład, założenie albo otwarte. Dopisz, czego AI nie powinno samodzielnie rozstrzygać.
+              - listitem [ref=e280]: Przekaż kontekst AI i poproś o wskazanie brakujących informacji przed wykonaniem zadania. Uzupełnij brief, jeśli odpowiedź ujawni lukę.
+              - listitem [ref=e281]: Użyj briefu do jednej ograniczonej pracy nad własnym prototypem i zanotuj, które informacje okazały się potrzebne.
+            - generic [ref=e282]:
+              - generic [ref=e283]: Sprawdź dla siebie
+              - list [ref=e284]:
+                - listitem [ref=e285]: Czy AI wie, jaki jest cel?
+                - listitem [ref=e286]: Czy rozumie zachowanie i granice?
+                - listitem [ref=e287]: Czy opis wizualny i dane są użyteczne albo jawnie pominięte?
+                - listitem [ref=e288]: Czy oddzieliłem fakty od założeń?
+        - generic [ref=e289]:
+          - generic [ref=e290]:
+            - generic [ref=e291]: Rezultat
+            - paragraph [ref=e292]: Krótka karta kontekstu dopasowana do zadania oraz notatka o tym, które informacje pomogły w pracy nad własnym projektem.
+          - generic [ref=e293]:
+            - generic [ref=e294]: Dobra praktyka
+            - paragraph [ref=e295]: Daj AI kontekst wystarczający do zadania, a zbędny zostaw poza bieżącą prośbą.
+          - link "Pogłęb teorię" [ref=e296] [cursor=pointer]:
+            - /url: /materials/modul-3/
+            - text: Pogłęb teorię
+            - generic [aria-hidden] [ref=e297]: ↗
+    - region [ref=e298]:
+      - generic [ref=e299]:
+        - generic [ref=e300]:
+          - generic [ref=e301]:
+            - paragraph [ref=e302]: Moduł 04 / 08
+            - heading "Interakcje poza statycznym ekranem" [level=2] [ref=e304]
+            - paragraph [ref=e305]: Uczestnik zapisuje wybrane przez siebie zachowanie jako działanie, stan przed, zmianę/przejście i oczekiwany rezultat; testuje je na własnym prototypie.
+          - 'complementary "Czas modułu: 35 minut" [ref=e306]':
+            - generic [ref=e307]:
+              - generic [ref=e308]: Czas modułu
+              - strong [ref=e309]: 35 minut
+        - generic [ref=e310]:
+          - article [ref=e311]:
+            - paragraph [ref=e312]:
+              - generic [ref=e313]: "01"
+              - text: Wprowadzenie do tematu
+            - heading "Kluczowa myśl" [level=3] [ref=e314]
+            - paragraph [ref=e315]: "Opisz interakcję jako sekwencję: działanie użytkownika → stan przed → zmiana → rezultat widoczny dla użytkownika. Dodaj stan pusty, oczekiwanie lub błąd, jeśli ma znaczenie dla pytania. Sprawdź zachowanie w prototypie; sam opis ekranu nie potwierdza, że interakcja działa."
+            - generic [ref=e316]:
+              - generic [aria-hidden] [ref=e317]: ↳
+              - text: Dla każdej ważnej interakcji określ stan przed i widoczny rezultat.
+          - article [ref=e318]:
+            - paragraph [ref=e319]:
+              - generic [ref=e320]: "02"
+              - text: Zadanie praktyczne
+            - heading "Opisz i uruchom wybraną interakcję" [level=3] [ref=e321]
+            - paragraph [ref=e322]:
+              - strong [ref=e323]: "Punkt wyjścia:"
+              - text: element lub pytanie wybrane przez uczestnika oraz kontekst z modułu 3.
+            - list [ref=e324]:
+              - listitem [ref=e325]: Wybierz jedną interakcję z własnego projektu.
+              - listitem [ref=e326]: "Uzupełnij tabelę dla co najmniej jednego przejścia: działanie użytkownika, stan przed, oczekiwana zmiana, rezultat widoczny. Jeśli istotne, dodaj jeden stan brzegowy."
+              - listitem [ref=e327]: Poproś AI o wdrożenie lub korektę tylko tego zachowania.
+              - listitem [ref=e328]: Uruchom prototyp, wykonaj scenariusz i zanotuj rzeczywisty rezultat.
+            - generic [ref=e329]:
+              - generic [ref=e330]: Sprawdź dla siebie
+              - list [ref=e331]:
+                - listitem [ref=e332]: Czy opisuję działanie, a nie samą nazwę funkcji?
+                - listitem [ref=e333]: Czy wiem, co powinno być widoczne po działaniu?
+                - listitem [ref=e334]: Czy przetestowałem prototyp, zamiast przyjąć zapewnienie AI?
+        - generic [ref=e335]:
+          - generic [ref=e336]:
+            - generic [ref=e337]: Rezultat
+            - paragraph [ref=e338]: Tabela z co najmniej jednym przejściem oraz notatka, czy zachowanie udało się zaobserwować.
+          - generic [ref=e339]:
+            - generic [ref=e340]: Dobra praktyka
+            - paragraph [ref=e341]: Dla każdej ważnej interakcji określ stan przed i widoczny rezultat.
+          - link "Pogłęb teorię" [ref=e342] [cursor=pointer]:
+            - /url: /materials/modul-4/
+            - text: Pogłęb teorię
+            - generic [aria-hidden] [ref=e343]: ↗
+    - region [ref=e344]:
+      - generic [ref=e345]:
+        - generic [ref=e346]:
+          - generic [ref=e347]:
+            - paragraph [ref=e348]: Moduł 05 / 08
+            - heading "Struktura prototypu i zakres zmiany" [level=2] [ref=e350]
+            - paragraph [ref=e351]: Uczestnik wskazuje element swojego prototypu, który odpowiada wybranej zmianie, oraz przygotowuje ograniczoną prośbę o zmianę z kryterium sprawdzenia.
+          - 'complementary "Czas modułu: 25 minut" [ref=e352]':
+            - generic [ref=e353]:
+              - generic [ref=e354]: Czas modułu
+              - strong [ref=e355]: 25 minut
+        - generic [ref=e356]:
+          - article [ref=e357]:
+            - paragraph [ref=e358]:
+              - generic [ref=e359]: "01"
+              - text: Wprowadzenie do tematu
+            - heading "Kluczowa myśl" [level=3] [ref=e360]
+            - paragraph [ref=e361]: Nie musisz znać całego kodu, by ograniczyć zmianę. Ustal, czy dotyczy wyglądu, zachowania, treści czy danych. Następnie wskaż widoczny element lub — jeśli możesz — nazwę jego komponentu/pliku. Poproś o plan i zmianę w tym zakresie, a potem sprawdź, co jeszcze się zmieniło.
+            - generic [ref=e362]:
+              - generic [aria-hidden] [ref=e363]: ↳
+              - text: Wskaż element, granicę zmiany i sposób jej sprawdzenia.
+          - article [ref=e364]:
+            - paragraph [ref=e365]:
+              - generic [ref=e366]: "02"
+              - text: Zadanie praktyczne
+            - heading "Znajdź miejsce zmiany i ogranicz jej zakres" [level=3] [ref=e367]
+            - paragraph [ref=e368]:
+              - strong [ref=e369]: "Punkt wyjścia:"
+              - text: wybrany element z modułu 4 lub inna własna część aplikacji, którą uczestnik chce zmienić.
+            - list [ref=e370]:
+              - listitem [ref=e371]: "Opisz element z perspektywy użytkownika i rodzaj zmiany: wygląd, zachowanie, treść lub dane."
+              - listitem [ref=e372]: Poproś narzędzie o wskazanie miejsca w projekcie i krótkie wyjaśnienie; jeśli jest widok plików, porównaj odpowiedź z tym, co widzisz.
+              - listitem [ref=e373]: "Zapisz granice: co ma się zmienić i co powinno pozostać takie samo."
+              - listitem [ref=e374]: Poproś o plan bez wdrażania, a następnie o jedną ograniczoną zmianę.
+              - listitem [ref=e375]: Sprawdź kryterium oraz sąsiedni element, jeśli jest dostępny.
+            - generic [ref=e376]:
+              - generic [ref=e377]: Sprawdź dla siebie
+              - list [ref=e378]:
+                - listitem [ref=e379]: Czy wskazałem konkretny element?
+                - listitem [ref=e380]: Czy AI wyjaśniło, co planuje?
+                - listitem [ref=e381]: Czy obejrzałem też obszar, który miał pozostać bez zmian?
+        - generic [ref=e382]:
+          - generic [ref=e383]:
+            - generic [ref=e384]: Rezultat
+            - paragraph [ref=e385]: Mapa albo sprawdzona hipoteza miejsca zmiany, treść ograniczonej prośby i zapis tego, co uczestnik sprawdził.
+          - generic [ref=e386]:
+            - generic [ref=e387]: Dobra praktyka
+            - paragraph [ref=e388]: Wskaż element, granicę zmiany i sposób jej sprawdzenia.
+          - link "Pogłęb teorię" [ref=e389] [cursor=pointer]:
+            - /url: /materials/modul-5/
+            - text: Pogłęb teorię
+            - generic [aria-hidden] [ref=e390]: ↗
+    - region [ref=e391]:
+      - generic [ref=e392]:
+        - generic [ref=e393]:
+          - generic [ref=e394]:
+            - paragraph [ref=e395]: Moduł 06 / 08
+            - heading "Debugowanie i ukierunkowana poprawka" [level=2] [ref=e397]
+            - paragraph [ref=e398]: Uczestnik opisuje problem za pomocą odtwarzalnych kroków i dowodu, wprowadza jedną celowaną poprawkę lub istotną zmianę w wybranym elemencie, a następnie porównuje wynik z punktem odniesienia i wyjaśnia, co poprawiła.
+          - 'complementary "Czas modułu: 35 minut" [ref=e399]':
+            - generic [ref=e400]:
+              - generic [ref=e401]: Czas modułu
+              - strong [ref=e402]: 35 minut
+        - generic [ref=e403]:
+          - article [ref=e404]:
+            - paragraph [ref=e405]:
+              - generic [ref=e406]: "01"
+              - text: Wprowadzenie do tematu
+            - heading "Kluczowa myśl" [level=3] [ref=e407]
+            - paragraph [ref=e408]: Zanim poprawisz, odtwórz problem. Zapisz kroki, oczekiwany i rzeczywisty wynik oraz dowód, np. zrzut ekranu lub komunikat. Zachowaj działającą wersję. Poproś o diagnozę, gdy przyczyna jest niejasna, wprowadzaj ograniczoną zmianę i powtórz test.
+            - generic [ref=e409]:
+              - generic [aria-hidden] [ref=e410]: ↳
+              - text: Zmieniaj po jednej rzeczy i testuj ponownie według tych samych kroków.
+          - article [ref=e411]:
+            - paragraph [ref=e412]:
+              - generic [ref=e413]: "02"
+              - text: Zadanie praktyczne
+            - heading "Udokumentuj, zmień i porównaj" [level=3] [ref=e414]
+            - paragraph [ref=e415]:
+              - strong [ref=e416]: "Punkt wyjścia:"
+              - text: zapisany punkt odniesienia z wcześniejszego modułu oraz wybrany przez uczestnika rezultat lub zachowanie, które chce sprawdzić.
+            - list [ref=e417]:
+              - listitem [ref=e418]: Odtwórz problem albo sprawdź wybrane kryterium.
+              - listitem [ref=e419]: Zapisz kroki, wynik oczekiwany, wynik rzeczywisty i dowód.
+              - listitem [ref=e420]: Zachowaj aktualną wersję.
+              - listitem [ref=e421]: Jeśli przyczyna jest niejasna, poproś AI najpierw o diagnozę bez zmiany. Potem poproś o jedną ograniczoną poprawkę; jeśli większy zakres jest uzasadniony, uczestnik wyjaśnia dlaczego.
+              - listitem [ref=e422]: Uruchom ten sam scenariusz ponownie i sprawdź sąsiednie zachowanie, o ile jest dostępne.
+              - listitem [ref=e423]: "Porównaj wersje: co się zmieniło, co poprawiło względem pytania i czego nadal nie wiadomo."
+            - generic [ref=e424]:
+              - generic [ref=e425]: Sprawdź dla siebie
+              - list [ref=e426]:
+                - listitem [ref=e427]: Czy ktoś inny mógłby odtworzyć opisany problem?
+                - listitem [ref=e428]: Czy porównałem faktyczne zachowanie?
+                - listitem [ref=e429]: Czy potrafię wyjaśnić, co poprawiła zmiana i czego prototyp nadal nie dowodzi?
+        - generic [ref=e430]:
+          - generic [ref=e431]:
+            - generic [ref=e432]: Rezultat
+            - paragraph [ref=e433]: Raport problemu lub testu, zachowany stan „przed”, zmieniony stan „po” oraz krótki wniosek oparty na zaobserwowanym wyniku. Jeśli naprawa się nie uda, dowód i następny krok też są poprawnym rezultatem ćwiczenia.
+          - generic [ref=e434]:
+            - generic [ref=e435]: Dobra praktyka
+            - paragraph [ref=e436]: Zmieniaj po jednej rzeczy i testuj ponownie według tych samych kroków.
+          - link "Pogłęb teorię" [ref=e437] [cursor=pointer]:
+            - /url: /materials/modul-6/
+            - text: Pogłęb teorię
+            - generic [aria-hidden] [ref=e438]: ↗
+    - region [ref=e439]:
+      - generic [ref=e440]:
+        - generic [ref=e441]:
+          - generic [ref=e442]:
+            - paragraph [ref=e443]: Moduł 07 / 08
+            - heading "Skill prototypowania z AI a zasady" [level=2] [ref=e445]
+            - paragraph [ref=e446]: Uczestnik rozróżnia ogólną zasadę pracy od instrukcji dla AI oraz przygotowuje po jednym przykładzie każdego rodzaju na podstawie własnych doświadczeń z warsztatu.
+          - 'complementary "Czas modułu: 25 minut" [ref=e447]':
+            - generic [ref=e448]:
+              - generic [ref=e449]: Czas modułu
+              - strong [ref=e450]: 25 minut
+        - generic [ref=e451]:
+          - article [ref=e452]:
+            - paragraph [ref=e453]:
+              - generic [ref=e454]: "01"
+              - text: Wprowadzenie do tematu
+            - heading "Kluczowa myśl" [level=3] [ref=e455]
+            - paragraph [ref=e456]: "Zasada mówi, jak podejmować dobre decyzje w prototypowaniu, niezależnie od konkretnego narzędzia. Skill to instrukcja wielokrotnego użytku dla AI: kiedy ją stosować, o co dopytać, jakie kroki wykonać, czego nie dopowiadać i jak sprawdzić wynik. Skill może wykorzystywać zasady, ale nie jest ich listą."
+            - generic [ref=e457]:
+              - generic [aria-hidden] [ref=e458]: ↳
+              - text: Zasada kieruje decyzją; Skill przekłada ją na powtarzalne działanie AI.
+          - article [ref=e459]:
+            - paragraph [ref=e460]:
+              - generic [ref=e461]: "02"
+              - text: Zadanie praktyczne
+            - heading "Przepisz doświadczenie na dwa formaty" [level=3] [ref=e462]
+            - paragraph [ref=e463]:
+              - strong [ref=e464]: "Punkt wyjścia:"
+              - text: własne notatki, zasada z dowolnego modułu lub trudność zaobserwowana podczas pracy.
+            - list [ref=e465]:
+              - listitem [ref=e466]: Sformułuj jedno zdanie, które jest zasadą i obowiązywałoby także przy innym narzędziu.
+              - listitem [ref=e467]: "Zapisz osobno instrukcję dla AI, która pozwoli zastosować tę zasadę: kiedy użyć, o co dopytać, jaki ograniczony krok wykonać i jak sprawdzić wynik."
+              - listitem [ref=e468]: Oznacz fragmenty zależne od funkcji konkretnego narzędzia jako opcjonalne.
+              - listitem [ref=e469]: Poproś AI o zastosowanie roboczej instrukcji do własnego pytania i popraw ją, jeśli model dopowie niezamówiony zakres.
+            - generic [ref=e470]:
+              - generic [ref=e471]: Sprawdź dla siebie
+              - list [ref=e472]:
+                - listitem [ref=e473]: Czy zasada jest zrozumiała bez wskazania jednego produktu?
+                - listitem [ref=e474]: Czy instrukcja wymienia kroki i kontrolę wyniku?
+                - listitem [ref=e475]: Czy model ma zapytać, gdy brakuje ważnej decyzji?
+        - generic [ref=e476]:
+          - generic [ref=e477]:
+            - generic [ref=e478]: Rezultat
+            - paragraph [ref=e479]: Para „zasada” i „instrukcja dla AI” oraz obserwacja, czy instrukcja pomogła modelowi zachować cel i granice zadania.
+          - generic [ref=e480]:
+            - generic [ref=e481]: Dobra praktyka
+            - paragraph [ref=e482]: Zasada kieruje decyzją; Skill przekłada ją na powtarzalne działanie AI.
+          - link "Pogłęb teorię" [ref=e483] [cursor=pointer]:
+            - /url: /materials/modul-7/
+            - text: Pogłęb teorię
+            - generic [aria-hidden] [ref=e484]: ↗
+    - region [ref=e485]:
+      - generic [ref=e486]:
+        - generic [ref=e487]:
+          - generic [ref=e488]:
+            - paragraph [ref=e489]: Moduł 08 / 08
+            - 'heading "Synteza: roboczy Skill i lista zasad" [level=2] [ref=e491]'
+            - paragraph [ref=e492]: Uczestnik pomaga zebrać warsztatowe dobre praktyki w listę zwięzłych zasad oraz współtworzy roboczy Skill prototypowania z AI z wejściem, procedurą i kontrolą wyniku.
+          - 'complementary "Czas modułu: 20 minut" [ref=e493]':
+            - generic [ref=e494]:
+              - generic [ref=e495]: Czas modułu
+              - strong [ref=e496]: 20 minut
+        - generic [ref=e497]:
+          - article [ref=e498]:
+            - paragraph [ref=e499]:
+              - generic [ref=e500]: "01"
+              - text: Wprowadzenie do tematu
+            - heading "Kluczowa myśl" [level=3] [ref=e501]
+            - paragraph [ref=e502]: Dobra zasada pomaga wybierać, a dobra instrukcja dla AI pozwala powtarzać wybrany sposób pracy. Zbieramy tylko praktyki, które pomogły w konkretnym zadaniu. Zapisujemy je krótko i sprawdzamy, czy można je zastosować w następnym prototypie.
+            - generic [ref=e503]:
+              - generic [aria-hidden] [ref=e504]: ↳
+              - text: Zachowaj to, co pomaga podjąć i sprawdzić następną decyzję.
+          - article [ref=e505]:
+            - paragraph [ref=e506]:
+              - generic [ref=e507]: "02"
+              - text: Zadanie praktyczne
+            - heading "Zbierz praktyki do dwóch wersji roboczych" [level=3] [ref=e508]
+            - paragraph [ref=e509]:
+              - strong [ref=e510]: "Punkt wyjścia:"
+              - text: dobre praktyki z końców modułów i indywidualne artefakty uczestników.
+            - list [ref=e511]:
+              - listitem [ref=e512]: Każdy wybiera jedną zasadę, która pomogła mu w pracy.
+              - listitem [ref=e513]: Zbierzcie powtórzenia i połączcie je w krótką listę; grupa może zaproponować korekty, ale nie głosuje nad „poprawnością” aplikacji.
+              - listitem [ref=e514]:
+                - text: "Uzupełnijcie wspólny szkic Skill:"
+                - strong [ref=e515]: kiedy użyć
+                - text: ","
+                - strong [ref=e516]: o co dopytać przed zmianą
+                - text: ","
+                - strong [ref=e517]: jak użyć kontekstu i ograniczyć zakres
+                - text: ","
+                - strong [ref=e518]: jak sprawdzić wynik
+                - text: ","
+                - strong [ref=e519]: co zrobić, gdy nie działa
+                - text: .
+              - listitem [ref=e520]: Przeczytajcie instrukcję i usuńcie powtórzenia albo wymogi zależne od niepotwierdzonego narzędzia.
+            - generic [ref=e521]:
+              - generic [ref=e522]: Sprawdź dla siebie
+              - list [ref=e523]:
+                - listitem [ref=e524]: Czy zasady są krótkie i wielokrotnego użytku?
+                - listitem [ref=e525]: Czy Skill mówi AI, co zrobić i jak sprawdzić rezultat?
+                - listitem [ref=e526]: Czy nie wymyśla uczestnikowi celu ani funkcji aplikacji?
+        - generic [ref=e527]:
+          - generic [ref=e528]:
+            - generic [ref=e529]: Rezultat
+            - paragraph [ref=e530]: Robocza lista zasad prototypowania wspomaganego przez AI oraz wersja 0.1 Skill do dalszego przeglądu. Każdy uczestnik zapisuje jedną rzecz, którą przetestuje w swojej następnej pracy.
+          - generic [ref=e531]:
+            - generic [ref=e532]: Dobra praktyka
+            - paragraph [ref=e533]: Zachowaj to, co pomaga podjąć i sprawdzić następną decyzję.
+          - link "Pogłęb teorię" [ref=e534] [cursor=pointer]:
+            - /url: /materials/modul-8/
+            - text: Pogłęb teorię
+            - generic [aria-hidden] [ref=e535]: ↗
+  - contentinfo [ref=e536]:
+    - generic [ref=e537]:
+      - generic [ref=e538]: Prototypowanie za pomocą narzędzi AI
+      - generic [ref=e539]: Materiały warsztatowe · 8 modułów
