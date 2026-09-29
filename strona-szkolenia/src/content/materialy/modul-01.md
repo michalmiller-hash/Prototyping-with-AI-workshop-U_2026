@@ -1,58 +1,56 @@
 ---
 number: 1
 module_slug: modul-1
-title: "Myślenie przez tworzenie w pracy z AI"
+title: "Myślenie przez tworzenie"
 tags: materials
 permalink: false
 ---
 
-### Prototyp to narzędzie myślenia
+### Wiedza powstaje w trakcie tworzenia
 
-Pomysł istniejący tylko w głowie łatwo wydaje się kompletny. Kiedy opiszesz go, naszkicujesz albo uruchomisz, musisz rozstrzygnąć szczegóły: co użytkownik widzi, co może zrobić, jak system reaguje i jakie informacje są potrzebne. Właśnie wtedy często ujawniają się założenia, których wcześniej nie było widać.
+Pomysł na playlistę dopasowaną do nastroju brzmi jasno, dopóki pozostaje w głowie. Spróbuj naszkicować ekran takiej aplikacji. Gdzie użytkownik wybiera nastrój? Co zobaczy, jeśli nie chce go określać? Jak zmieni się lista utworów? Rysując, musisz podjąć decyzje, których wcześniej nie było widać. Szkic może więc pomóc nie tylko pokazać pomysł, ale też lepiej go zrozumieć.
 
-„Thinking through making” oznacza w tym warsztacie myślenie poprzez tworzenie i oglądanie zewnętrznej reprezentacji pomysłu. Nie oznacza obowiązku pisania kodu ani budowania pełnej aplikacji. Artefaktem może być szkic, fragment interfejsu, prosty prototyp albo symulacja. Wartość artefaktu zależy od tego, czy pomaga podjąć decyzję.
-
-**Wniosek ze źródła:** materiały opisują prototyp jako narzędzie do eksploracji, komunikowania pomysłu i podejmowania decyzji, nie jako produkt sam w sobie. Idea „thinking through making” jest koncepcją omawianą podczas warsztatu, a nie osobną, standaryzowaną metodą z repozytorium.
-
-### Rola AI i rola człowieka
-
-Narzędzie AI może szybko przełożyć opis na widoczną wersję. Może też wypełnić luki własnymi domysłami. Płynny, dopracowany wynik nie jest dowodem, że przyjęte założenia są prawdziwe. Człowiek nadal wybiera:
-
-- jakie pytanie warto sprawdzić;
-- które rozwiązanie chce zobaczyć;
-- jaki poziom szczegółu wystarczy;
-- co uzna za obserwację, a co za wniosek;
-- jaki ma być następny krok.
-
-Praktyczna różnica:
-
-| Pytanie kontrolne | Co sprawdza |
-|---|---|
-| „Co udało się wygenerować?” | Rezultat wykonania |
-| „Co teraz wiem lub mogę zdecydować?” | Wartość poznawczą prototypu |
-| „Czego nadal nie wiem?” | Granice tego, co prototyp potwierdza |
-
-Sam fakt, że prototyp działa na ekranie, nie dowodzi, że użytkownicy go chcą, że potrafią się nim posłużyć ani że produkt można bezpiecznie wdrożyć. Każde z tych pytań wymaga odpowiedniego dowodu.
-
-### Pętla uczenia się
-
-**Objaśnienie dydaktyczne — schemat do ponownego użycia**
+To właśnie oznacza w tym warsztacie **thinking through making**: tworzenie wiedzy przez działanie na materiale. W pracy projektowej takim materiałem może być szkic, tekst, diagram, fragment interfejsu lub prototyp. Donald Schön opisywał projektowanie jako *reflective conversation with materials* — refleksyjną rozmowę z materiałem. Robimy coś, obserwujemy, co z tego wynika, i na tej podstawie wykonujemy kolejny ruch.
 
 ~~~text
-Pytanie lub założenie
-        ↓
-Najmniejszy przydatny artefakt
-        ↓
-Obserwacja: co faktycznie widzę lub mogę zrobić?
-        ↓
-Porównanie z oczekiwaniem
-        ↓
-Wniosek i kolejna decyzja
-        ↺
+Intencja → działanie → artefakt → obserwacja → zaskoczenie
+    ↑                                          ↓
+    └──────── kolejne działanie ← nowe rozumienie
 ~~~
 
-„Najmniejszy” nie znaczy „najprostszy za wszelką cenę”. Oznacza: nie dodawaj elementów, które nie są potrzebne do uzyskania informacji z bieżącego kroku. Jeśli pytanie dotyczy zachowania, sam obraz może nie wystarczyć. Jeśli chodzi o ogólny kierunek, szczegółowa symulacja danych może być zbędna.
+Ważne są tu dwie rzeczy: informacja zwrotna i nieprzewidywalność. Gdy widzimy powstały szkic albo sprawdzamy działanie prototypu, możemy zauważyć coś, czego nie dało się przewidzieć z samego opisu. Myślenie i tworzenie wzajemnie na siebie wpływają: myśl prowadzi do działania, a działanie zmienia to, jak rozumiemy problem.
 
-**Praktyczna wskazówka.** Przed otwarciem narzędzia dokończ zdanie: „Po tej iteracji chcę lepiej zrozumieć…”. Po pracy dokończ drugie: „Na podstawie tego prototypu mogę stwierdzić…, ale nie mogę jeszcze stwierdzić…”.
+Nawet ruch, który nie przybliża nas bezpośrednio do gotowego rozwiązania, może ułatwić myślenie. W Tetrisie gracz czasem obraca lub przesuwa klocek, żeby sprawdzić, jak pasuje do układu. Podobnie projektant może zmienić układ elementów tylko po to, by zobaczyć, która wersja lepiej wyjaśnia pomysł.
 
-**Źródła:** *„The New Product Development Lifecycle”* — „Prototypes are decision-making tools”, „Concept prototypes”; *„Prototypes Are the New PRDs”* — „Exploration”.
+### Co zmienia AI?
+
+AI może przejąć część pracy wykonawczej: przygotować wariant ekranu, przepisać powtarzalny fragment albo szybko zbudować interakcję. Nie powinno jednak automatycznie przejmować całej pracy poznawczej — działań, dzięki którym odkrywamy, rozumiemy, porównujemy i na nowo formułujemy problem.
+
+Jeśli każda nasza czynność sprowadza się do „prompt → gotowa odpowiedź → ocena”, łatwo stać się wyłącznie recenzentem rezultatu. Żeby uczyć się przez tworzenie, potrzebujemy kolejnych własnych ruchów: zmienić założenie, porównać dwa kierunki, połączyć elementy albo zlecić AI następny, mniejszy krok. Nie chodzi tylko o to, by AI dawało odpowiedzi, ale by pomagało nam wykonać następny krok pracy.
+
+### Dopracowany prototyp nie musi być przemyślany
+
+AI potrafi szybko nadać pomysłowi przekonującą, dopracowaną formę. Ale **dojrzały wygląd prototypu nie oznacza dojrzałego rozumienia problemu**. Ładny ekran może ukryć niejasne założenia albo zasugerować, że rozwiązanie jest gotowe, choć nikt jeszcze nie sprawdził, czy odpowiada na potrzebę użytkownika. To rozjazd między dojrzałością reprezentacji a dojrzałością myślenia.
+
+W jednym badaniu pracowników umysłowych większa wiara w możliwości AI wiązała się z mniejszym deklarowanym zaangażowaniem krytycznego myślenia. To korelacja, nie dowód, że zaufanie do AI samo w sobie powoduje taki spadek. W praktyce warto jednak pilnować, by dopracowany wynik nie zastąpił pytań: co tu sprawdzam, co zauważyłem i czego wciąż nie wiem?
+
+### Kiedy AI wspiera myślenie przez tworzenie?
+
+| Wymiar | AI wspiera proces, gdy… |
+|---|---|
+| Moment | pomaga po pierwszym pytaniu lub próbie, zamiast od razu wybierać kierunek za nas |
+| Zakres | proponuje kolejny przydatny krok, a nie zawsze kompletny, dopracowany produkt |
+| Sprawczość | daje materiał, który możemy zmieniać, porównywać i łączyć, zamiast tylko zaakceptować lub odrzucić |
+
+Możemy też myśleć o czterech rolach AI:
+
+|  | Szukanie różnych kierunków | Rozwijanie lub ocenianie kierunku |
+|---|---|---|
+| Eksploracja | **Prowokator** — zadaje pytania i podsuwa zaskakujące możliwości | **Krytyk** — pokazuje napięcia i konsekwencje pomysłu |
+| Realizacja | **Generator** — tworzy warianty do dalszej pracy | **Wykonawca** — realizuje i dopracowuje wybrany kierunek |
+
+Ryzyko pojawia się, gdy AI zachowuje się jak wykonawca, zanim wiemy jeszcze, co chcemy zrobić. Dostajemy wtedy przekonującą wersję jednego pomysłu i możemy przestać szukać innych.
+
+**Podczas warsztatu będziemy pracować w duchu thinking through making:** zaczynać od pytania lub własnego pomysłu, prosić AI o pomoc w kolejnych krokach, a potem oglądać rezultat, porównywać możliwości i decydować, co zrobić dalej. Prototyp pomaga nam coś zobaczyć; sam nie dowodzi, że użytkownicy zechcą z niego korzystać ani że produkt jest gotowy do wdrożenia.
+
+**Źródła:** Donald Schön, *Reflective Conversation with the Materials of a Design Situation*; Kirsh i Maglio, *On Distinguishing Epistemic from Pragmatic Action*; Lee i in., *The Impact of Generative AI on Critical Thinking*; *„The New Product Development Lifecycle”* — „Prototypes are decision-making tools”.

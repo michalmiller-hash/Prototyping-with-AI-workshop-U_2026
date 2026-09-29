@@ -19,7 +19,9 @@ eleventyComputed:
       <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Moduł {{ item.data.number | pad2 }} / 08</p>
       <h1 id="detail-title">{{ item.data.title }}</h1>
       <p class="detail-lead">{{ item.data.theory }}</p>
+      {% if not item.data.hide_goal %}
       <div class="detail-goal"><span class="small-label">Cel modułu</span><p>{{ item.data.goal }}</p></div>
+      {% endif %}
     </div>
     <aside class="detail-time-card" aria-label="Czas modułu">
       <div data-participant-time>
