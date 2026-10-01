@@ -2,29 +2,52 @@
 number: 6
 slug: modul-6
 title: "Debugowanie i ukierunkowana poprawka"
-goal: "Uczestnik opisuje problem za pomocą odtwarzalnych kroków i dowodu, wprowadza jedną celowaną poprawkę lub istotną zmianę w wybranym elemencie, a następnie porównuje wynik z punktem odniesienia i wyjaśnia, co poprawiła."
 duration: 35
-breakdown:
-  theory: 7
-  demonstration: 5
-  exercise: 19
-  reflection: 4
-theory: "Zanim poprawisz, odtwórz problem. Zapisz kroki, oczekiwany i rzeczywisty wynik oraz dowód, np. zrzut ekranu lub komunikat. Zachowaj działającą wersję. Poproś o diagnozę, gdy przyczyna jest niejasna, wprowadzaj ograniczoną zmianę i powtórz test."
-task_title: "Udokumentuj, zmień i porównaj"
-starting_point: "zapisany punkt odniesienia z wcześniejszego modułu oraz wybrany przez uczestnika rezultat lub zachowanie, które chce sprawdzić."
-steps:
-  - "Odtwórz problem albo sprawdź wybrane kryterium."
-  - "Zapisz kroki, wynik oczekiwany, wynik rzeczywisty i dowód."
-  - "Zachowaj aktualną wersję."
-  - "Jeśli przyczyna jest niejasna, poproś AI najpierw o diagnozę bez zmiany. Potem poproś o jedną ograniczoną poprawkę; jeśli większy zakres jest uzasadniony, uczestnik wyjaśnia dlaczego."
-  - "Uruchom ten sam scenariusz ponownie i sprawdź sąsiednie zachowanie, o ile jest dostępne."
-  - "Porównaj wersje: co się zmieniło, co poprawiło względem pytania i czego nadal nie wiadomo."
-result: "Raport problemu lub testu, zachowany stan „przed”, zmieniony stan „po” oraz krótki wniosek oparty na zaobserwowanym wyniku. Jeśli naprawa się nie uda, dowód i następny krok też są poprawnym rezultatem ćwiczenia."
-self_check:
-  - "Czy ktoś inny mógłby odtworzyć opisany problem?"
-  - "Czy porównałem faktyczne zachowanie?"
-  - "Czy potrafię wyjaśnić, co poprawiła zmiana i czego prototyp nadal nie dowodzi?"
-principle: "Zmieniaj po jednej rzeczy i testuj ponownie według tych samych kroków."
 tags: modules
 permalink: false
+slides:
+  - title: "Opis problemu oddziela obserwację od wyjaśnienia"
+    content: |-
+      „Nie działa” nie wskazuje, co się wydarzyło. Opis przydatny do diagnozy rozróżnia fakty od hipotezy o przyczynie.
+
+      | Typ informacji | Przykładowy zapis |
+      |---|---|
+      | Obserwacja | Po wskazanym działaniu widoczny stan pozostał bez zmian. |
+      | Hipoteza | Przyczyna może leżeć w sposobie aktualizacji tego stanu. |
+    sources:
+      - "Raw/AI Prototyping/9. Debugging Your Prototypes.md — Describe the problem to the AI"
+  - title: "Odtwarzalny raport wskazuje kontekst, kroki i wynik"
+    content: |-
+      Przydatny opis problemu zawiera:
+
+      - **Kontekst:** który element lub wariant jest sprawdzany?
+      - **Kroki:** co wydarzyło się po kolei?
+      - **Oczekiwany wynik:** co miało się stać?
+      - **Rzeczywisty wynik:** co się stało?
+      - **Dowód:** co można zaobserwować lub pokazać?
+    sources:
+      - "Raw/AI Prototyping/9. Debugging Your Prototypes.md — Describe the problem to the AI"
+  - title: "Kontrolowana poprawka zaczyna się od zachowania punktu odniesienia"
+    content: |-
+      **Zachowaj stan → odtwórz problem → ustal zmianę → zdiagnozuj lub popraw → powtórz te same kroki.**
+
+      Porównanie tych samych scenariuszy pomaga zauważyć, co rzeczywiście się zmieniło. Jeśli poprawka może dotknąć sąsiednie zachowanie, ten obszar także może wymagać sprawdzenia.
+    sources:
+      - "Raw/AI Prototyping/9. Debugging Your Prototypes.md — The core workflow; Managing versions"
+  - title: "Powtarzanie nieskutecznej taktyki to sygnał do zmiany podejścia"
+    content: |-
+      Po kolejnych próbach bez użytecznej zmiany można wrócić do stabilnej wersji, zawęzić problem, poprosić o diagnozę albo uprościć fragment prototypu.
+
+      Reguła kilku prób pomaga przerwać pętlę. Nie oznacza, że trzeba czekać, jeśli już widać, że kolejne polecenie powtarza ten sam ruch bez nowych informacji.
+    sources:
+      - "Raw/AI Prototyping/9. Debugging Your Prototypes.md — The three-strike rule; When to start over"
+      - "Objaśnienie redakcyjne: przerwanie powtarzanej taktyki nie wymaga czekania na ustaloną liczbę prób."
+  - title: "Udana próba potwierdza kryterium w danym scenariuszu"
+    content: |-
+      Jeśli prototyp zachował się zgodnie z kryterium w odtworzonym scenariuszu, to jest informacja o tym zachowaniu w tej próbie.
+
+      Nie dowodzi to, że każdy użytkownik zrozumie rozwiązanie ani że aplikacja będzie działać produkcyjnie.
+    sources:
+      - "Raw/AI Prototyping/9. Debugging Your Prototypes.md — The core workflow"
+      - "Raw/AI Prototyping/14. Testing Prototypes With Customers.md — Start with the question, not the prototype"
 ---

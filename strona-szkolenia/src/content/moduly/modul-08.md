@@ -1,28 +1,39 @@
 ---
 number: 8
 slug: modul-8
-title: "Synteza: roboczy Skill i lista zasad"
-goal: "Uczestnik pomaga zebrać warsztatowe dobre praktyki w listę zwięzłych zasad oraz współtworzy roboczy Skill prototypowania z AI z wejściem, procedurą i kontrolą wyniku."
+title: "Zasady i powtarzalny proces prototypowania z AI"
 duration: 20
-breakdown:
-  theory: 4
-  demonstration: 3
-  exercise: 10
-  reflection: 3
-theory: "Dobra zasada pomaga wybierać, a dobra instrukcja dla AI pozwala powtarzać wybrany sposób pracy. Zbieramy tylko praktyki, które pomogły w konkretnym zadaniu. Zapisujemy je krótko i sprawdzamy, czy można je zastosować w następnym prototypie."
-task_title: "Zbierz praktyki do dwóch wersji roboczych"
-starting_point: "dobre praktyki z końców modułów i indywidualne artefakty uczestników."
-steps:
-  - "Każdy wybiera jedną zasadę, która pomogła mu w pracy."
-  - "Zbierzcie powtórzenia i połączcie je w krótką listę; grupa może zaproponować korekty, ale nie głosuje nad „poprawnością” aplikacji."
-  - "Uzupełnijcie wspólny szkic Skill: **kiedy użyć**, **o co dopytać przed zmianą**, **jak użyć kontekstu i ograniczyć zakres**, **jak sprawdzić wynik**, **co zrobić, gdy nie działa**."
-  - "Przeczytajcie instrukcję i usuńcie powtórzenia albo wymogi zależne od niepotwierdzonego narzędzia."
-result: "Robocza lista zasad prototypowania wspomaganego przez AI oraz wersja 0.1 Skill do dalszego przeglądu. Każdy uczestnik zapisuje jedną rzecz, którą przetestuje w swojej następnej pracy."
-self_check:
-  - "Czy zasady są krótkie i wielokrotnego użytku?"
-  - "Czy Skill mówi AI, co zrobić i jak sprawdzić rezultat?"
-  - "Czy nie wymyśla uczestnikowi celu ani funkcji aplikacji?"
-principle: "Zachowaj to, co pomaga podjąć i sprawdzić następną decyzję."
 tags: modules
 permalink: false
+slides:
+  - title: "Powtarzalny proces pomaga dobierać kolejne kroki"
+    content: |-
+      Proces pomaga rozpoznać istotne pytanie, dobrać sposób prototypowania, obserwować wynik i podjąć kolejną decyzję.
+
+      Liczbę kroków i szczegółowość opisu można dopasować do złożoności i ryzyka sytuacji.
+    sources:
+      - "Synteza redakcyjna materiałów: Raw/Articles/thinking throught making.md oraz Raw/AI Prototyping/9. Debugging Your Prototypes.md"
+  - title: "Proces łączy pytanie, artefakt, obserwację i następną decyzję"
+    content: |-
+      **Pytanie → dobór prototypu i kontekstu → widoczny artefakt → obserwacja → decyzja o kolejnym ruchu**
+
+      W zależności od sytuacji ścieżka może wrócić do wcześniejszego kroku. Nie każda praca wymaga osobnego polecenia lub nowej wersji prototypu.
+    sources:
+      - "Raw/Articles/thinking throught making.md — Thinking-through-making jako projektowanie pętli"
+      - "Raw/AI Prototyping/9. Debugging Your Prototypes.md — The core workflow"
+  - title: "Sprawdzenie wyniku zamyka pętlę informacji"
+    content: |-
+      Zmiana nabiera znaczenia w zestawieniu z oczekiwanym zachowaniem lub innym kryterium. Obserwacja mówi, co stało się w tej próbie; decyzja człowieka określa, co z niej wynika.
+
+      Wynik może uzasadniać zachowanie zmiany, jej cofnięcie, zmianę taktyki albo powrót do wcześniejszego pytania.
+    sources:
+      - "Raw/AI Prototyping/9. Debugging Your Prototypes.md — The core workflow"
+      - "Raw/AI Prototyping/14. Testing Prototypes With Customers.md — Start with the question, not the prototype"
+  - title: "Zasady i Skill wspierają różne części procesu"
+    content: |-
+      Zasady pomagają człowiekowi wybierać kierunek i oceniać kompromisy. Skill może powtarzalnie prowadzić AI przez określone kroki. Wspierają tę samą pracę z różnych stron i nie zastępują oceny wyniku.
+
+      To model do adaptacji do sytuacji, a nie obowiązkowy zestaw etapów dla każdego prototypu.
+    sources:
+      - "Propozycja warsztatowa: zestawienie zasad dla człowieka i procedury dla AI."
 ---

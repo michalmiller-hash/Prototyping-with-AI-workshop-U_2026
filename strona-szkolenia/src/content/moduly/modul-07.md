@@ -2,27 +2,40 @@
 number: 7
 slug: modul-7
 title: "Skill prototypowania z AI a zasady"
-goal: "Uczestnik rozróżnia ogólną zasadę pracy od instrukcji dla AI oraz przygotowuje po jednym przykładzie każdego rodzaju na podstawie własnych doświadczeń z warsztatu."
 duration: 25
-breakdown:
-  theory: 7
-  demonstration: 4
-  exercise: 11
-  reflection: 3
-theory: "Zasada mówi, jak podejmować dobre decyzje w prototypowaniu, niezależnie od konkretnego narzędzia. Skill to instrukcja wielokrotnego użytku dla AI: kiedy ją stosować, o co dopytać, jakie kroki wykonać, czego nie dopowiadać i jak sprawdzić wynik. Skill może wykorzystywać zasady, ale nie jest ich listą."
-task_title: "Przepisz doświadczenie na dwa formaty"
-starting_point: "własne notatki, zasada z dowolnego modułu lub trudność zaobserwowana podczas pracy."
-steps:
-  - "Sformułuj jedno zdanie, które jest zasadą i obowiązywałoby także przy innym narzędziu."
-  - "Zapisz osobno instrukcję dla AI, która pozwoli zastosować tę zasadę: kiedy użyć, o co dopytać, jaki ograniczony krok wykonać i jak sprawdzić wynik."
-  - "Oznacz fragmenty zależne od funkcji konkretnego narzędzia jako opcjonalne."
-  - "Poproś AI o zastosowanie roboczej instrukcji do własnego pytania i popraw ją, jeśli model dopowie niezamówiony zakres."
-result: "Para „zasada” i „instrukcja dla AI” oraz obserwacja, czy instrukcja pomogła modelowi zachować cel i granice zadania."
-self_check:
-  - "Czy zasada jest zrozumiała bez wskazania jednego produktu?"
-  - "Czy instrukcja wymienia kroki i kontrolę wyniku?"
-  - "Czy model ma zapytać, gdy brakuje ważnej decyzji?"
-principle: "Zasada kieruje decyzją; Skill przekłada ją na powtarzalne działanie AI."
 tags: modules
 permalink: false
+slides:
+  - title: "Zasada kieruje decyzją, instrukcja opisuje działanie AI"
+    content: |-
+      **Zasada** pomaga człowiekowi rozstrzygnąć, co jest ważne i jak postąpić. Może działać niezależnie od konkretnego narzędzia.
+
+      **Skill prototypowania z AI** to robocza, wielokrotnego użytku instrukcja dla AI, opisująca sposób pracy przy określonej klasie zadań.
+    sources:
+      - "Propozycja warsztatowa: robocze rozróżnienie zasady i instrukcji dla AI; nie uniwersalny standard. Materiał kontekstowy: Raw/Prototyping skill/(MM) AI prototyping skill.md — Proponowane tryby"
+  - title: "Skill może przełożyć zasadę na powtarzalną procedurę"
+    content: |-
+      Instrukcja może określać:
+
+      1. kiedy ją stosować;
+      2. jakie informacje zebrać;
+      3. jakie kroki wykonać;
+      4. czego nie dopowiadać;
+      5. jak sprawdzić wynik i co zrobić, gdy coś nie działa.
+    sources:
+      - "Propozycja warsztatowa: przykładowe elementy wielokrotnego użytku instrukcji dla AI."
+  - title: "Zasada może zasilać Skill, ale nie jest tym samym"
+    content: |-
+      Zasada może być jednym z fundamentów instrukcji dla AI. Nie trzeba jednak przepisywać jej w wielu miejscach ani zakładać, że każda zasada wymaga osobnego kroku w Skill.
+
+      Zasada pomaga odpowiedzieć „co jest ważne?”, a procedura mówi modelowi, jak postępować według wybranego sposobu pracy.
+    sources:
+      - "Propozycja warsztatowa: relacja między ogólną zasadą a procedurą dla modelu."
+  - title: "Instrukcje zależne od narzędzia wymagają wariantu"
+    content: |-
+      Różne narzędzia mogą mieć inne funkcje i sposoby pracy. Wielokrotnego użytku Skill może więc zawierać ogólną procedurę oraz oznaczone warianty zależne od konkretnej aplikacji.
+
+      Definicja Skill i proponowane przykłady w tym warsztacie są roboczym ujęciem, a nie uniwersalnym standardem.
+    sources:
+      - "Propozycja warsztatowa: rozdzielanie ogólnych wskazówek od wariantów zależnych od narzędzia."
 ---

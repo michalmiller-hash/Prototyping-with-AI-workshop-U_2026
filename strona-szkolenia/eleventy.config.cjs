@@ -8,11 +8,8 @@ module.exports = function (eleventyConfig) {
     [...entries].sort((a, b) => a.data.number - b.data.number),
   );
 
-  eleventyConfig.addFilter("materialFor", (entries = [], number) =>
-    entries.find((entry) => entry.data.number === number),
-  );
-
   eleventyConfig.addFilter("pad2", (value) => String(value).padStart(2, "0"));
+  eleventyConfig.addFilter("markdown", (value = "") => markdown.render(value));
   eleventyConfig.addFilter("markdownInline", (value = "") => markdown.renderInline(value));
 
   eleventyConfig.setServerOptions({

@@ -22,7 +22,7 @@ prototypowania. Sama prototypowana aplikacja nie musi zawierać funkcji AI.
 - Oczekiwana znajomość programowania: [brak].
 - Oczekiwane doświadczenie w pracy z narzędziami AI: [podstawowy].
 - Czas trwania warsztatu:[4.5 godziny]
-- Forma prowadzenia: [czesc teoretyczna, zadanie praktyczna, praca indywidualna.]
+- Forma prowadzenia: prezentacja modułów; zadania projektowane w osobnym etapie; praca indywidualna.
 - Dostępne narzędzia i środowisko techniczne: narzedzie do prototypowania z AI, komputer.
 - Język materiałów dla uczestników: [polski.]
 
@@ -66,7 +66,7 @@ Po warsztacie uczestnicy powinni umieć:
   i nakładu pracy na kolejne iteracje.
 - Przebudować lub istotnie zmienić prototyp z użyciem poznanych technik
   oraz wyjaśnić, co poprawiły.
-- Zebrać poznane zasady w powtarzalną metodę pracy.
+- Wyjaśnić, jak zasady i wielokrotnego użytku instrukcje mogą wspierać powtarzalny proces pracy.
 
 ## Podejście dydaktyczne
 
@@ -74,24 +74,31 @@ Po warsztacie uczestnicy powinni umieć:
 koncepcją projektową omawianą podczas warsztatu. Nie jest metodą prowadzenia
 warsztatu ani zasadą organizującą jego zajęcia.
 
-Każdy moduł oprzyj na zwięzłym, ale merytorycznym objaśnieniu teorii.
-Zdefiniuj kluczowe pojęcia, wyjaśnij ich rolę w projektowaniu i prototypowaniu
-wspomaganym przez AI oraz przekaż uczestnikom kontekst potrzebny do zrozumienia,
-dlaczego i kiedy warto stosować omawiane techniki.
+### Prezentacja modułów
 
-Po części teoretycznej zaproponuj praktyczne zadanie wykonywane w aplikacji,
-którą uczestnik buduje. Każde zadanie powinno wykorzystywać techniki z danego
-modułu i rozwijać lub zmieniać tę samą aplikację, tak aby projekt ewoluował
-w trakcie warsztatu. Uczestnicy pracują samodzielnie. Zapewnij im czas na pracę,
-a tam, gdzie to przydatne, także na krótką wymianę refleksji lub pokazanie
-jednego czy dwóch przykładów. Prowadzący przekazuje materiał i przygotowuje
-zadania, ale nie odpowiada za sprawdzanie pracy każdego uczestnika ani
-ocenianie, czy zadanie zostało wykonane poprawnie.
+Moduł jest grupą slajdów stanowiących główną treść wyświetlaną uczestnikom.
+Nie jest skrótem, który odsyła do osobnej teorii. Każdy slajd przedstawia
+jedną myśl w sposób zrozumiały bez zakładania, że uczestnik przeczytał
+dodatkowy materiał. Złożone pojęcie może zajmować kilka kolejnych slajdów,
+jeśli każdy z nich wnosi osobny, czytelny krok wyjaśnienia.
 
-Każdy moduł zakończ bardzo krótkim przypomnieniem kluczowych pojęć i praktyk.
-Podsumowania powinny razem tworzyć zwięzłą listę dobrych praktyk na koniec
-warsztatu. Szczegółowe objaśnienia pozostaw w odpowiednich modułach, aby
-uczestnicy mogli do nich wrócić, jeśli będą chcieli dowiedzieć się więcej.
+Układaj slajdy tak, by moduł prowadził przez zagadnienie: od potrzebnego
+kontekstu, przez objaśnienie pojęć lub mechanizmu, po ograniczenia i wnioski
+przydatne dla uczestnika. Dobieraj formę do myśli: tekst, porównanie, sekwencję,
+tabelę lub schemat. Nie wymuszaj tej samej liczby slajdów ani takiego samego
+układu dla każdego modułu.
+
+W pierwszym etapie twórz wyłącznie treść prezentacji. Nie dodawaj do slajdów
+instrukcji ćwiczeń, punktów wyjścia, kroków zadania, oczekiwanych artefaktów
+ani pytań samooceny. Zadania są osobnym elementem warsztatu i zostaną
+zaprojektowane później; nie powinny z góry wyznaczać zakresu ani kolejności
+treści slajdów. Na tym etapie nie twórz też odrębnych, pogłębionych materiałów
+uczestnika ani równoległej wersji „do poczytania”.
+
+Czas 270 minut pozostaje ramą całego spotkania. Zachowuj obecne czasy modułów
+jako robocze sloty agendy, ale nie dziel ich teraz na teorię, ćwiczenie,
+demonstrację ani refleksję. Taki podział będzie można ustalić, gdy osobno
+powstaną zadania i pełna agenda.
 
 Tam, gdzie uzasadnia to omawiana teoria, wyjaśnij, jak dana technika może
 ograniczyć zużycie tokenów i koszty — na przykład przez zawężenie kontekstu
@@ -109,8 +116,8 @@ Poniższa kolejność jest punktem wyjścia:
 4. Interakcje wykraczające poza statyczne ekrany.
 5. Struktura prototypu i jej wpływ na efektywność pracy z AI.
 6. Debugowanie i ukierunkowane poprawki.
-7. Omówienie czym jest skill a czym są prototyping principles z uyciam AI.
-8. Zebranie best-practise oraz przemyśleń uczestników i opracowanie AI prototyping Skill oraz lista AI prototyping principles.
+7. Różnica między zasadą pracy a wielokrotnego użytku instrukcją dla AI.
+8. Zasady i powtarzalny proces prototypowania wspomaganego przez AI.
 
 Możesz zaproponować zmianę tej kolejności, jeśli uzasadniają ją wymagane
 wcześniej umiejętności lub spójność ćwiczeń. Krótko wyjaśnij istotne zmiany.
@@ -133,14 +140,12 @@ Nie ma wspólnego briefu produktowego, określonej potrzeby użytkownika ani
 wymaganego zestawu funkcji czy przepływów. Uczestnicy sami decydują, co
 znajdzie się w ich aplikacji i do czego będzie służyć.
 
-Aplikacja jest środkiem do ćwiczenia technik warsztatowych, a jej końcowa
-zawartość ani jakość nie definiują sukcesu. Zadanie w każdym module powinno
-zachęcać uczestnika do zastosowania konkretnej techniki we własnym projekcie,
-dodania kolejnej warstwy lub wykonania iteracji. Opisz punkt wyjścia zadania
-oraz zmianę lub materiał, nad którym uczestnik ma pracować, ale nie narzucaj
-koncepcji jego aplikacji.
+Aplikacja jest wspólnym kontekstem dla całego warsztatu, ale slajdy nie mogą
+zakładać, że uczestnik zbudował konkretną funkcję, ekran lub przepływ.
+Końcowa zawartość ani jakość aplikacji nie definiują sukcesu. Zadania będą
+projektowane osobno i mogą później odwołać się do aplikacji uczestnika,
+nie zmieniając z góry głównej treści modułów.
 
 Uczestnicy mogą korzystać z przykładowych danych i symulowanych usług;
 prawdziwe integracje nie są wymagane, chyba że dana technika wyraźnie
-ich potrzebuje. Gdy jest to związane z omawianą techniką, ćwiczenia mogą
-zachęcać do zachowywania kolejnych wersji lub porównywania iteracji.
+ich potrzebuje. To ograniczenie dotyczy również późniejszych zadań.
