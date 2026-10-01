@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/assets/styles.css">
     <script src="/assets/site.js" defer></script>
   </head>
-  <body data-page="{{ page_type }}"{% if moduleEntry %} data-module-number="{{ moduleEntry.data.number }}"{% endif %}>
+  <body data-page="{{ page_type }}">
     <a class="skip-link" href="#main">Przejdź do treści</a>
 
     {% set modules = collections.modules | sortByNumber %}
@@ -27,28 +27,17 @@
           <a class="navigation-intro{% if page_type == 'home' %} is-current{% endif %}" href="/#wprowadzenie" data-course-link data-nav-intro>Wprowadzenie</a>
           <div class="module-navigation" aria-label="Moduły">
             {% for item in modules %}
-              <a class="module-navigation-link{% if moduleEntry and moduleEntry.data.number == item.data.number %} is-current{% endif %}" href="{% if page_type == 'home' %}#{{ item.data.slug }}{% else %}/materials/{{ item.data.slug }}/{% endif %}" data-course-link data-nav-module="{{ item.data.number }}" aria-label="Moduł {{ item.data.number }}. {{ item.data.title }}" title="Moduł {{ item.data.number }}. {{ item.data.title }}">{{ item.data.number | pad2 }}</a>
+              <a class="module-navigation-link" href="#{{ item.data.slug }}" data-course-link data-nav-module="{{ item.data.number }}" aria-label="Moduł {{ item.data.number }}. {{ item.data.title }}" title="Moduł {{ item.data.number }}. {{ item.data.title }}">{{ item.data.number | pad2 }}</a>
             {% endfor %}
           </div>
         </nav>
 
         <div class="header-actions">
           <span class="presenter-badge" data-presenter-only hidden>Tryb prowadzącego</span>
-          {% if page_type == 'home' %}
-            <div class="step-controls" data-home-step-controls>
-              <a class="step-link step-link-disabled" href="#wprowadzenie" data-home-prev aria-disabled="true"><span aria-hidden="true">←</span> Poprzedni</a>
-              <a class="step-link" href="#modul-1" data-home-next>Następny <span aria-hidden="true">→</span></a>
-            </div>
-          {% else %}
-            {% set previousNumber = moduleEntry.data.number - 1 %}
-            {% set nextNumber = moduleEntry.data.number + 1 %}
-            <a class="step-link" href="{% if moduleEntry.data.number == 1 %}/#wprowadzenie{% else %}/materials/modul-{{ previousNumber }}/{% endif %}" data-course-link><span aria-hidden="true">←</span> Poprzedni</a>
-            {% if moduleEntry.data.number < modules.length %}
-              <a class="step-link" href="/materials/modul-{{ nextNumber }}/" data-course-link>Następny <span aria-hidden="true">→</span></a>
-            {% else %}
-              <span class="step-link step-link-disabled" aria-disabled="true">Następny</span>
-            {% endif %}
-          {% endif %}
+          <div class="step-controls" data-home-step-controls>
+            <a class="step-link step-link-disabled" href="#wprowadzenie" data-home-prev aria-disabled="true"><span aria-hidden="true">←</span> Poprzedni</a>
+            <a class="step-link" href="#modul-1" data-home-next>Następny <span aria-hidden="true">→</span></a>
+          </div>
         </div>
 
         <button class="menu-toggle" type="button" data-menu-toggle aria-controls="mobile-navigation" aria-expanded="false" aria-label="Otwórz nawigację">
@@ -62,21 +51,12 @@
           <p class="mobile-navigation-label">Moduły</p>
           <ol class="mobile-module-list">
             {% for item in modules %}
-              <li><a href="{% if page_type == 'home' %}#{{ item.data.slug }}{% else %}/materials/{{ item.data.slug }}/{% endif %}" data-course-link><span>{{ item.data.number | pad2 }}</span> {{ item.data.title }}</a></li>
+              <li><a href="#{{ item.data.slug }}" data-course-link><span>{{ item.data.number | pad2 }}</span> {{ item.data.title }}</a></li>
             {% endfor %}
           </ol>
           <div class="mobile-step-links">
-            {% if page_type == 'home' %}
-              <a class="step-link step-link-disabled" href="#wprowadzenie" data-home-prev aria-disabled="true"><span aria-hidden="true">←</span> Poprzedni</a>
-              <a class="step-link" href="#modul-1" data-home-next>Następny <span aria-hidden="true">→</span></a>
-            {% else %}
-              <a class="step-link" href="{% if moduleEntry.data.number == 1 %}/#wprowadzenie{% else %}/materials/modul-{{ previousNumber }}/{% endif %}" data-course-link><span aria-hidden="true">←</span> Poprzedni</a>
-              {% if moduleEntry.data.number < modules.length %}
-                <a class="step-link" href="/materials/modul-{{ nextNumber }}/" data-course-link>Następny <span aria-hidden="true">→</span></a>
-              {% else %}
-                <span class="step-link step-link-disabled" aria-disabled="true">Następny</span>
-              {% endif %}
-            {% endif %}
+            <a class="step-link step-link-disabled" href="#wprowadzenie" data-home-prev aria-disabled="true"><span aria-hidden="true">←</span> Poprzedni</a>
+            <a class="step-link" href="#modul-1" data-home-next>Następny <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </nav>

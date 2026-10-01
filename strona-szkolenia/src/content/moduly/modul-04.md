@@ -2,27 +2,47 @@
 number: 4
 slug: modul-4
 title: "Interakcje poza statycznym ekranem"
-goal: "Uczestnik zapisuje wybrane przez siebie zachowanie jako działanie, stan przed, zmianę/przejście i oczekiwany rezultat; testuje je na własnym prototypie."
 duration: 35
-breakdown:
-  theory: 7
-  demonstration: 6
-  exercise: 18
-  reflection: 4
-theory: "Opisz interakcję jako sekwencję: działanie użytkownika → stan przed → zmiana → rezultat widoczny dla użytkownika. Dodaj stan pusty, oczekiwanie lub błąd, jeśli ma znaczenie dla pytania. Sprawdź zachowanie w prototypie; sam opis ekranu nie potwierdza, że interakcja działa."
-task_title: "Opisz i uruchom wybraną interakcję"
-starting_point: "element lub pytanie wybrane przez uczestnika oraz kontekst z modułu 3."
-steps:
-  - "Wybierz jedną interakcję z własnego projektu."
-  - "Uzupełnij tabelę dla co najmniej jednego przejścia: działanie użytkownika, stan przed, oczekiwana zmiana, rezultat widoczny. Jeśli istotne, dodaj jeden stan brzegowy."
-  - "Poproś AI o wdrożenie lub korektę tylko tego zachowania."
-  - "Uruchom prototyp, wykonaj scenariusz i zanotuj rzeczywisty rezultat."
-result: "Tabela z co najmniej jednym przejściem oraz notatka, czy zachowanie udało się zaobserwować."
-self_check:
-  - "Czy opisuję działanie, a nie samą nazwę funkcji?"
-  - "Czy wiem, co powinno być widoczne po działaniu?"
-  - "Czy przetestowałem prototyp, zamiast przyjąć zapewnienie AI?"
-principle: "Dla każdej ważnej interakcji określ stan przed i widoczny rezultat."
 tags: modules
 permalink: false
+slides:
+  - title: "Zrzut ekranu pokazuje jeden moment, nie całe zachowanie"
+    content: |-
+      Obraz interfejsu nie wyjaśnia, co stanie się po kliknięciu, wpisaniu tekstu, zmianie wyboru ani wystąpieniu błędu.
+
+      Interakcja pozwala zobaczyć przejście między stanami.
+    sources:
+      - "Raw/Test complex interactions/Test Complex Interactions Earlier with AI Prototyping.md — How to Prototype Complex Interfaces with AI"
+      - "Raw/AI Prototyping/6. Context Engineering for Prototyping.md — Functional context—Use cases & behavior"
+  - title: "Zachowanie składa się z działania i widocznej odpowiedzi"
+    content: |-
+      Opis interakcji obejmuje cztery części:
+
+      1. **Działanie** użytkownika.
+      2. **Stan przed** działaniem.
+      3. **Zmiana** lub reguła reakcji systemu.
+      4. **Rezultat** widoczny po działaniu.
+    sources:
+      - "Raw/Test complex interactions/Test Complex Interactions Earlier with AI Prototyping.md — How to Prototype Complex Interfaces with AI"
+  - title: "Stany brzegowe wybiera się według pytania"
+    content: |-
+      Poza stanem pomyślnym mogą mieć znaczenie: pusty ekran, oczekiwanie, błąd, nieaktywna kontrolka albo częściowy wynik.
+
+      Nie każdy prototyp musi odwzorować wszystkie przypadki. Znaczenie ma to, czy dany stan wpływa na doświadczenie albo zmienia odpowiedź na pytanie projektowe.
+    sources:
+      - "Raw/Test complex interactions/Test Complex Interactions Earlier with AI Prototyping.md — How to Prototype Complex Interfaces with AI"
+  - title: "Wierność interakcji zależy od tego, co ma być widoczne"
+    content: |-
+      Jeśli temat dotyczy pierwszego wrażenia, obraz statyczny może wystarczyć. Jeśli dotyczy sposobu korzystania, prototyp musi pozwolić zaobserwować istotne działanie i odpowiedź systemu.
+
+      Im bardziej złożone zachowanie, tym ważniejsze jest jawne określenie reguł i stanów, które wpływają na obserwację.
+    sources:
+      - "Raw/Test complex interactions/Test Complex Interactions Earlier with AI Prototyping.md — How to Prototype Complex Interfaces with AI"
+  - title: "Działające kliknięcie nie dowodzi, że rozwiązanie jest potrzebne"
+    content: |-
+      Uruchomienie prototypu pozwala sprawdzić, czy zachowuje się zgodnie z opisaną regułą. Samodzielne kliknięcie nie mówi jeszcze, czy użytkownicy rozumieją rozwiązanie ani czy go potrzebują.
+
+      Deklaracja AI, że zmiana jest gotowa, nie zastępuje obserwacji rzeczywistego działania.
+    sources:
+      - "Raw/AI Prototyping/14. Testing Prototypes With Customers.md — Start with the question, not the prototype; Observe more than you talk"
 ---

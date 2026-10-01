@@ -2,7 +2,7 @@
 layout: base.njk
 page_type: home
 title: false
-description: Warsztat prototypowania za pomocą narzędzi AI. Osiem modułów z teorią i zadaniami praktycznymi.
+description: Warsztat prototypowania za pomocą narzędzi AI. Osiem modułów z treścią prezentacji.
 permalink: index.html
 ---
 {% set modules = collections.modules | sortByNumber %}
@@ -18,25 +18,24 @@ permalink: index.html
       <h2 id="intro-assumptions-title">Założenia warsztatu</h2>
       <dl class="intro-facts">
         <div><dt>4,5 godziny</dt><dd>łączny czas warsztatu</dd></div>
-        <div><dt>8 modułów</dt><dd>każdy z zaplanowaną pulą czasu</dd></div>
+        <div><dt>8 modułów</dt><dd>każdy z roboczym slotem w agendzie</dd></div>
         <div><dt>2 przerwy</dt><dd>w trakcie spotkania</dd></div>
       </dl>
-      <p>Przez cały warsztat rozwijasz ten sam prototyp aplikacji związanej z wybranym przez siebie gatunkiem muzycznym. Samodzielnie decydujesz o jego kierunku i sposobie rozbudowy.</p>
+      <p>Przykłady i demonstracje mogą odwoływać się do aplikacji związanej z wybranym przez Ciebie gatunkiem muzycznym. Jej cel i zakres pozostają Twoim wyborem.</p>
       <p>Celem jest nauka używania narzędzi AI w procesie prototypowania, a nie stworzenie dopracowanego produktu.</p>
     </div>
   </section>
 
   <section class="intro-screen" aria-labelledby="intro-outcomes-title">
     <div class="intro-screen-inner">
-      <h2 id="intro-outcomes-title">Co będziesz umieć po warsztacie?</h2>
+      <h2 id="intro-outcomes-title">Co obejmuje warsztat?</h2>
       <ol class="intro-outcomes">
-        <li>Dobierać rodzaj i wierność prototypu do pytania.</li>
-        <li>Przygotować użyteczny kontekst do zadania.</li>
-        <li>Opisywać interakcję przez działanie, stan, przejście i rezultat.</li>
-        <li>Rozpoznawać strukturę potrzebną do ograniczonej zmiany.</li>
-        <li>Świadomie zarządzać kontekstem, zakresem generowania i iteracją.</li>
-        <li>Zmieniać prototyp i wyjaśniać, co poprawiła zmiana.</li>
-        <li>Zbierać powtarzalną metodę pracy.</li>
+        <li>Dobór rodzaju, celu i wierności prototypu.</li>
+        <li>Przygotowanie kontekstu funkcjonalnego, wizualnego i dotyczącego danych.</li>
+        <li>Opis interakcji przez działanie, stan, przejście i rezultat.</li>
+        <li>Rozpoznawanie struktury potrzebnej do ograniczenia zmiany.</li>
+        <li>Diagnozowanie problemu i ocenianie poprawki na podstawie obserwacji.</li>
+        <li>Rozróżnienie zasad pracy i instrukcji wielokrotnego użytku dla AI.</li>
       </ol>
     </div>
   </section>
@@ -54,10 +53,10 @@ permalink: index.html
           <tr class="intro-agenda-break"><th scope="row">Przerwa</th><td>10:40–10:50</td><td>10</td></tr>
           <tr><th scope="row">4. Interakcje poza statycznym ekranem</th><td>10:50–11:25</td><td>35</td></tr>
           <tr><th scope="row">5. Struktura prototypu i zakres zmiany</th><td>11:25–11:50</td><td>25</td></tr>
-          <tr><th scope="row">6. Debugowanie, ukierunkowana poprawka i porównanie</th><td>11:50–12:25</td><td>35</td></tr>
+          <tr><th scope="row">6. Debugowanie i ukierunkowana poprawka</th><td>11:50–12:25</td><td>35</td></tr>
           <tr class="intro-agenda-break"><th scope="row">Przerwa</th><td>12:25–12:35</td><td>10</td></tr>
           <tr><th scope="row">7. Skill prototypowania z AI a zasady</th><td>12:35–13:00</td><td>25</td></tr>
-          <tr><th scope="row">8. Synteza: roboczy Skill i lista zasad</th><td>13:00–13:20</td><td>20</td></tr>
+          <tr><th scope="row">8. Zasady i powtarzalny proces prototypowania z AI</th><td>13:00–13:20</td><td>20</td></tr>
           <tr><th scope="row">Zamknięcie: samoocena i następny krok</th><td>13:20–13:30</td><td>10</td></tr>
         </tbody>
         <tfoot><tr><th scope="row">Razem</th><td>09:00–13:30</td><td>270</td></tr></tfoot>
@@ -74,135 +73,19 @@ permalink: index.html
         <div>
           <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Moduł {{ item.data.number | pad2 }} / 08</p>
           <h2 id="module-title-{{ item.data.number }}">{{ item.data.title }}</h2>
-          {% if not item.data.hide_goal %}<p class="module-intro">{{ item.data.goal }}</p>{% endif %}
         </div>
         {% include "timer.njk" %}
       </div>
 
-      {% if item.data.number == 1 %}
-        <div class="module-one-theory">
-          <section class="module-one-subsection module-one-conversation" aria-labelledby="module-one-conversation-title">
-            <h3 id="module-one-conversation-title">Projektowanie to konwersacja</h3>
-            <figure class="module-one-quote">
-              <blockquote><p>„{{ item.data.quote.text }}”</p></blockquote>
-              <figcaption>{{ item.data.quote.author }}</figcaption>
-            </figure>
-            <ul class="module-one-conversation-list">
-              {% for step in item.data.conversation_steps %}<li>{{ step }}</li>{% endfor %}
-            </ul>
-            <div class="module-one-insights">
-              {% for insight in item.data.conversation_insights %}<p>{{ insight }}</p>{% endfor %}
-            </div>
-            <p class="module-one-material">{{ item.data.theory_material }}</p>
-          </section>
-
-          <section class="module-one-subsection module-one-cycle" aria-labelledby="module-one-cycle-title">
-            <h3 id="module-one-cycle-title">Myślenie i tworzenie = pętla</h3>
-            <ol class="thinking-cycle">
-              {% for step in item.data.thinking_cycle %}
-                <li>
-                  <span class="thinking-cycle-number">{{ loop.index | pad2 }}</span>
-                  <strong>{{ step.title }}</strong>
-                  <p>{{ step.text }}</p>
-                </li>
-              {% endfor %}
-            </ol>
-            <aside class="module-one-curiosity" aria-label="Ciekawostka">
-              <span class="small-label">Ciekawostka</span>
-              <p>{{ item.data.theory_tetris }}</p>
-            </aside>
-          </section>
-
-          <section class="module-one-subsection module-one-ai" aria-labelledby="module-one-ai-title">
-            <h3 id="module-one-ai-title">AI ma wspierać Twój kolejny ruch</h3>
-            <div class="module-one-ai-copy">
-              <p>{{ item.data.theory_ai_effort }}</p>
-              <p>{{ item.data.theory_ai_reviewer }}</p>
-            </div>
-            <div class="module-one-prompt-flow">
-              <p><span>Nie tylko</span> prompt → odpowiedź → ocena</p>
-              <p><span>Częściej</span> prompt → obserwacja → kolejny ruch</p>
-            </div>
-            <table class="module-one-support-matrix">
-              <thead><tr><th scope="col">Wymiar</th><th scope="col">AI wspiera myślenie przez tworzenie, gdy…</th></tr></thead>
-              <tbody>
-                {% for condition in item.data.ai_support_conditions %}
-                  <tr><th scope="row">{{ condition.dimension }}</th><td>{{ condition.text }}</td></tr>
-                {% endfor %}
-              </tbody>
-            </table>
-          </section>
-
-          <section class="module-one-subsection module-one-fidelity" aria-labelledby="module-one-fidelity-title">
-            <h3 id="module-one-fidelity-title">Fidelity Trap</h3>
-            <p class="module-one-fidelity-copy">{{ item.data.theory_representation_gap }}</p>
-            <aside class="module-one-evidence" aria-label="Odniesienie do badania">
-              <span class="small-label">Badanie</span>
-              <p>{{ item.data.critical_thinking_study.text }}</p>
-              <footer>
-                <cite>{{ item.data.critical_thinking_study.authors }}, {{ item.data.critical_thinking_study.title }}</cite>
-                <span>{{ item.data.critical_thinking_study.venue }} · {{ item.data.critical_thinking_study.sample }}</span>
-              </footer>
-            </aside>
-            <table class="module-one-role-matrix">
-              <thead>
-                <tr><th scope="col">Rola AI</th><th scope="col">Szukanie różnych kierunków</th><th scope="col">Rozwijanie wybranego kierunku</th></tr>
-              </thead>
-              <tbody>
-                {% for role_row in item.data.ai_role_matrix %}
-                  <tr>
-                    <th scope="row">{{ role_row.phase }}</th>
-                    <td><strong>{{ role_row.divergence.title }}</strong><br>{{ role_row.divergence.text }}</td>
-                    <td><strong>{{ role_row.convergence.title }}</strong><br>{{ role_row.convergence.text }}</td>
-                  </tr>
-                {% endfor %}
-              </tbody>
-            </table>
-          </section>
-        </div>
-
-        <aside class="module-task-placeholder">
-          <p class="module-task-label">Zadanie praktyczne</p>
-          <p>Tu będzie opis zadania.</p>
-        </aside>
-        <a class="button button-dark module-more module-one-more" href="/materials/{{ item.data.slug }}/" data-course-link>Pogłębienie tematu w Materials <span aria-hidden="true">↗</span></a>
-      {% else %}
-        <div class="module-grid">
-          <article class="content-card theory-card">
-            <p class="card-kicker"><span class="card-kicker-number">01</span> Wprowadzenie do tematu</p>
-            <h3>Kluczowa myśl</h3>
-            <p>{{ item.data.theory | markdownInline | safe }}</p>
-            <div class="card-keyline"><span class="keyline-mark" aria-hidden="true">↳</span> {{ item.data.principle | markdownInline | safe }}</div>
+      <section class="presentation-slide-list" aria-label="Slajdy modułu {{ item.data.number }}">
+        {% for slide in item.data.slides %}
+          <article class="presentation-slide" id="{{ item.data.slug }}-slajd-{{ loop.index }}" aria-labelledby="{{ item.data.slug }}-slajd-tytul-{{ loop.index }}">
+            <p class="presentation-slide-kicker">Slajd {{ loop.index | pad2 }} / {{ item.data.slides | length | pad2 }}</p>
+            <h3 id="{{ item.data.slug }}-slajd-tytul-{{ loop.index }}">{{ slide.title }}</h3>
+            <div class="presentation-slide-content">{{ slide.content | markdown | safe }}</div>
           </article>
-
-          <article class="content-card task-card">
-            <p class="card-kicker"><span class="card-kicker-number">02</span> Zadanie praktyczne</p>
-            <h3>{{ item.data.task_title }}</h3>
-            {% if item.data.starting_point %}<p class="task-starting-point"><strong>Punkt wyjścia:</strong> {{ item.data.starting_point | markdownInline | safe }}</p>{% endif %}
-            <ol class="task-list">
-              {% for step in item.data.steps %}<li>{{ step | markdownInline | safe }}</li>{% endfor %}
-            </ol>
-            {% if item.data.self_check %}
-              <div class="task-self-check">
-                <span class="small-label">Sprawdź dla siebie</span>
-                <ul>{% for question in item.data.self_check %}<li>{{ question }}</li>{% endfor %}</ul>
-              </div>
-            {% endif %}
-          </article>
-        </div>
-
-        <div class="module-footer">
-          <div class="module-outcome">
-            <span class="small-label">Rezultat</span>
-            <p>{{ item.data.result | markdownInline | safe }}</p>
-          </div>
-          <div class="module-principle">
-            <span class="small-label">Dobra praktyka</span>
-            <p>{{ item.data.principle | markdownInline | safe }}</p>
-          </div>
-          <a class="button button-dark module-more" href="/materials/{{ item.data.slug }}/" data-course-link>Pogłęb teorię <span aria-hidden="true">↗</span></a>
-        </div>
-      {% endif %}
+        {% endfor %}
+      </section>
     </div>
   </section>
 {% endfor %}
